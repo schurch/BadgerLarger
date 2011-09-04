@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FDE706431413BEF60032ACD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706421413BEF60032ACD0 /* UIKit.framework */; };
+		FDE706451413BEF60032ACD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706441413BEF60032ACD0 /* Foundation.framework */; };
+		FDE706471413BEF60032ACD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706461413BEF60032ACD0 /* CoreGraphics.framework */; };
+		FDE7064D1413BEF60032ACD0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDE7064B1413BEF60032ACD0 /* InfoPlist.strings */; };
+		FDE706501413BEF60032ACD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE7064F1413BEF60032ACD0 /* main.m */; };
+		FDE706531413BEF60032ACD0 /* BadgerLargerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE706521413BEF60032ACD0 /* BadgerLargerAppDelegate.m */; };
+		FDE706561413BEF60032ACD0 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE706541413BEF60032ACD0 /* MainWindow.xib */; };
+		FDE706591413BEF60032ACD0 /* BadgerLargerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE706581413BEF60032ACD0 /* BadgerLargerViewController.m */; };
+		FDE7065C1413BEF60032ACD0 /* BadgerLargerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE7065A1413BEF60032ACD0 /* BadgerLargerViewController.xib */; };
+		FDE706631413BEF60032ACD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706421413BEF60032ACD0 /* UIKit.framework */; };
+		FDE706641413BEF60032ACD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706441413BEF60032ACD0 /* Foundation.framework */; };
+		FDE706651413BEF60032ACD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706461413BEF60032ACD0 /* CoreGraphics.framework */; };
+		FDE7066D1413BEF60032ACD0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDE7066B1413BEF60032ACD0 /* InfoPlist.strings */; };
+		FDE706701413BEF60032ACD0 /* BadgerLargerTests.h in Resources */ = {isa = PBXBuildFile; fileRef = FDE7066F1413BEF60032ACD0 /* BadgerLargerTests.h */; };
+		FDE706721413BEF60032ACD0 /* BadgerLargerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE706711413BEF60032ACD0 /* BadgerLargerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDE706661413BEF60032ACD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDE706351413BEF50032ACD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDE7063D1413BEF60032ACD0;
+			remoteInfo = BadgerLarger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FDE7063E1413BEF60032ACD0 /* BadgerLarger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadgerLarger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDE706421413BEF60032ACD0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FDE706441413BEF60032ACD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FDE706461413BEF60032ACD0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FDE7064A1413BEF60032ACD0 /* BadgerLarger-Info.plist */ = {isa = PBXFileReference; path = "BadgerLarger-Info.plist"; sourceTree = "<group>"; };
+		FDE7064C1413BEF60032ACD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FDE7064E1413BEF60032ACD0 /* BadgerLarger-Prefix.pch */ = {isa = PBXFileReference; path = "BadgerLarger-Prefix.pch"; sourceTree = "<group>"; };
+		FDE7064F1413BEF60032ACD0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FDE706511413BEF60032ACD0 /* BadgerLargerAppDelegate.h */ = {isa = PBXFileReference; path = BadgerLargerAppDelegate.h; sourceTree = "<group>"; };
+		FDE706521413BEF60032ACD0 /* BadgerLargerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgerLargerAppDelegate.m; sourceTree = "<group>"; };
+		FDE706551413BEF60032ACD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		FDE706571413BEF60032ACD0 /* BadgerLargerViewController.h */ = {isa = PBXFileReference; path = BadgerLargerViewController.h; sourceTree = "<group>"; };
+		FDE706581413BEF60032ACD0 /* BadgerLargerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgerLargerViewController.m; sourceTree = "<group>"; };
+		FDE7065B1413BEF60032ACD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BadgerLargerViewController.xib; sourceTree = "<group>"; };
+		FDE706621413BEF60032ACD0 /* BadgerLargerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BadgerLargerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDE7066A1413BEF60032ACD0 /* BadgerLargerTests-Info.plist */ = {isa = PBXFileReference; path = "BadgerLargerTests-Info.plist"; sourceTree = "<group>"; };
+		FDE7066C1413BEF60032ACD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FDE7066E1413BEF60032ACD0 /* BadgerLargerTests-Prefix.pch */ = {isa = PBXFileReference; path = "BadgerLargerTests-Prefix.pch"; sourceTree = "<group>"; };
+		FDE7066F1413BEF60032ACD0 /* BadgerLargerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BadgerLargerTests.h; sourceTree = "<group>"; };
+		FDE706711413BEF60032ACD0 /* BadgerLargerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgerLargerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDE7063B1413BEF60032ACD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDE706431413BEF60032ACD0 /* UIKit.framework in Frameworks */,
+				FDE706451413BEF60032ACD0 /* Foundation.framework in Frameworks */,
+				FDE706471413BEF60032ACD0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDE7065E1413BEF60032ACD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDE706631413BEF60032ACD0 /* UIKit.framework in Frameworks */,
+				FDE706641413BEF60032ACD0 /* Foundation.framework in Frameworks */,
+				FDE706651413BEF60032ACD0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FDE706331413BEF50032ACD0 = {
+			isa = PBXGroup;
+			children = (
+				FDE706481413BEF60032ACD0 /* BadgerLarger */,
+				FDE706681413BEF60032ACD0 /* BadgerLargerTests */,
+				FDE706411413BEF60032ACD0 /* Frameworks */,
+				FDE7063F1413BEF60032ACD0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDE7063F1413BEF60032ACD0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDE7063E1413BEF60032ACD0 /* BadgerLarger.app */,
+				FDE706621413BEF60032ACD0 /* BadgerLargerTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDE706411413BEF60032ACD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDE706421413BEF60032ACD0 /* UIKit.framework */,
+				FDE706441413BEF60032ACD0 /* Foundation.framework */,
+				FDE706461413BEF60032ACD0 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDE706481413BEF60032ACD0 /* BadgerLarger */ = {
+			isa = PBXGroup;
+			children = (
+				FDE706511413BEF60032ACD0 /* BadgerLargerAppDelegate.h */,
+				FDE706521413BEF60032ACD0 /* BadgerLargerAppDelegate.m */,
+				FDE706541413BEF60032ACD0 /* MainWindow.xib */,
+				FDE706571413BEF60032ACD0 /* BadgerLargerViewController.h */,
+				FDE706581413BEF60032ACD0 /* BadgerLargerViewController.m */,
+				FDE7065A1413BEF60032ACD0 /* BadgerLargerViewController.xib */,
+				FDE706491413BEF60032ACD0 /* Supporting Files */,
+			);
+			path = BadgerLarger;
+			sourceTree = "<group>";
+		};
+		FDE706491413BEF60032ACD0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FDE7064A1413BEF60032ACD0 /* BadgerLarger-Info.plist */,
+				FDE7064B1413BEF60032ACD0 /* InfoPlist.strings */,
+				FDE7064E1413BEF60032ACD0 /* BadgerLarger-Prefix.pch */,
+				FDE7064F1413BEF60032ACD0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDE706681413BEF60032ACD0 /* BadgerLargerTests */ = {
+			isa = PBXGroup;
+			children = (
+				FDE7066F1413BEF60032ACD0 /* BadgerLargerTests.h */,
+				FDE706711413BEF60032ACD0 /* BadgerLargerTests.m */,
+				FDE706691413BEF60032ACD0 /* Supporting Files */,
+			);
+			path = BadgerLargerTests;
+			sourceTree = "<group>";
+		};
+		FDE706691413BEF60032ACD0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FDE7066A1413BEF60032ACD0 /* BadgerLargerTests-Info.plist */,
+				FDE7066B1413BEF60032ACD0 /* InfoPlist.strings */,
+				FDE7066E1413BEF60032ACD0 /* BadgerLargerTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDE7063D1413BEF60032ACD0 /* BadgerLarger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDE706751413BEF60032ACD0 /* Build configuration list for PBXNativeTarget "BadgerLarger" */;
+			buildPhases = (
+				FDE7063A1413BEF60032ACD0 /* Sources */,
+				FDE7063B1413BEF60032ACD0 /* Frameworks */,
+				FDE7063C1413BEF60032ACD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BadgerLarger;
+			productName = BadgerLarger;
+			productReference = FDE7063E1413BEF60032ACD0 /* BadgerLarger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FDE706611413BEF60032ACD0 /* BadgerLargerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDE706781413BEF60032ACD0 /* Build configuration list for PBXNativeTarget "BadgerLargerTests" */;
+			buildPhases = (
+				FDE7065D1413BEF60032ACD0 /* Sources */,
+				FDE7065E1413BEF60032ACD0 /* Frameworks */,
+				FDE7065F1413BEF60032ACD0 /* Resources */,
+				FDE706601413BEF60032ACD0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDE706671413BEF60032ACD0 /* PBXTargetDependency */,
+			);
+			name = BadgerLargerTests;
+			productName = BadgerLargerTests;
+			productReference = FDE706621413BEF60032ACD0 /* BadgerLargerTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDE706351413BEF50032ACD0 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = FDE706381413BEF50032ACD0 /* Build configuration list for PBXProject "BadgerLarger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FDE706331413BEF50032ACD0;
+			productRefGroup = FDE7063F1413BEF60032ACD0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDE7063D1413BEF60032ACD0 /* BadgerLarger */,
+				FDE706611413BEF60032ACD0 /* BadgerLargerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDE7063C1413BEF60032ACD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDE7064D1413BEF60032ACD0 /* InfoPlist.strings in Resources */,
+				FDE706561413BEF60032ACD0 /* MainWindow.xib in Resources */,
+				FDE7065C1413BEF60032ACD0 /* BadgerLargerViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDE7065F1413BEF60032ACD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDE7066D1413BEF60032ACD0 /* InfoPlist.strings in Resources */,
+				FDE706701413BEF60032ACD0 /* BadgerLargerTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FDE706601413BEF60032ACD0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDE7063A1413BEF60032ACD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDE706501413BEF60032ACD0 /* main.m in Sources */,
+				FDE706531413BEF60032ACD0 /* BadgerLargerAppDelegate.m in Sources */,
+				FDE706591413BEF60032ACD0 /* BadgerLargerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDE7065D1413BEF60032ACD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDE706721413BEF60032ACD0 /* BadgerLargerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FDE706671413BEF60032ACD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDE7063D1413BEF60032ACD0 /* BadgerLarger */;
+			targetProxy = FDE706661413BEF60032ACD0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FDE7064B1413BEF60032ACD0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDE7064C1413BEF60032ACD0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FDE706541413BEF60032ACD0 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDE706551413BEF60032ACD0 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		FDE7065A1413BEF60032ACD0 /* BadgerLargerViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDE7065B1413BEF60032ACD0 /* en */,
+			);
+			name = BadgerLargerViewController.xib;
+			sourceTree = "<group>";
+		};
+		FDE7066B1413BEF60032ACD0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDE7066C1413BEF60032ACD0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FDE706731413BEF60032ACD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FDE706741413BEF60032ACD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		FDE706761413BEF60032ACD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BadgerLarger/BadgerLarger-Prefix.pch";
+				INFOPLIST_FILE = "BadgerLarger/BadgerLarger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FDE706771413BEF60032ACD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BadgerLarger/BadgerLarger-Prefix.pch";
+				INFOPLIST_FILE = "BadgerLarger/BadgerLarger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FDE706791413BEF60032ACD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BadgerLarger.app/BadgerLarger";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BadgerLargerTests/BadgerLargerTests-Prefix.pch";
+				INFOPLIST_FILE = "BadgerLargerTests/BadgerLargerTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FDE7067A1413BEF60032ACD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BadgerLarger.app/BadgerLarger";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BadgerLargerTests/BadgerLargerTests-Prefix.pch";
+				INFOPLIST_FILE = "BadgerLargerTests/BadgerLargerTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDE706381413BEF50032ACD0 /* Build configuration list for PBXProject "BadgerLarger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDE706731413BEF60032ACD0 /* Debug */,
+				FDE706741413BEF60032ACD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDE706751413BEF60032ACD0 /* Build configuration list for PBXNativeTarget "BadgerLarger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDE706761413BEF60032ACD0 /* Debug */,
+				FDE706771413BEF60032ACD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FDE706781413BEF60032ACD0 /* Build configuration list for PBXNativeTarget "BadgerLargerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDE706791413BEF60032ACD0 /* Debug */,
+				FDE7067A1413BEF60032ACD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDE706351413BEF50032ACD0 /* Project object */;
+}
