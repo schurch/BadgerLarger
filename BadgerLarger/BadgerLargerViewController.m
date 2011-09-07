@@ -3,7 +3,7 @@
 //  BadgerLarger
 //
 //  Created by Stefan Church on 04/09/2011.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Stefan Church. All rights reserved.
 //
 
 #import "BadgerLargerViewController.h"
@@ -20,29 +20,18 @@
 }
 
 - (IBAction)showBadgerChooser:(id)sender {
-    // Create the root view controller for the navigation controller
-    // The new view controller configures a Cancel and Done button for the
-    // navigation bar.
     ChooserViewController *chooserViewController = [[ChooserViewController alloc]
                                                           initWithNibName:@"ChooserViewController" bundle:nil];
     
-    // Configure the RecipeAddViewController. In this case, it reports any
-    // changes to a custom delegate object.
     chooserViewController.delegate = self;
     
-    // Create the navigation controller and present it modally.
     UINavigationController *navigationController = [[UINavigationController alloc]
                                                     initWithRootViewController:chooserViewController];
     
     navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.0/255.0 green:150.0/255.0 blue:0.0/255.0 alpha:1.0];
-    //navigationController.title = @"Badger Chooser";
     
     [self presentModalViewController:navigationController animated:YES];
     
-    
-    // The navigation controller is now owned by the current view controller
-    // and the root view controller is owned by the navigation controller,
-    // so both objects should be released to prevent over-retention.
     [navigationController release];
     [chooserViewController release]; 
 }

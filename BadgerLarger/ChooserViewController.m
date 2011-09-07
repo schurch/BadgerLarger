@@ -3,27 +3,32 @@
 //  BadgerLarger
 //
 //  Created by Stefan Church on 04/09/2011.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Stefan Church. All rights reserved.
 //
 
 #import "ChooserViewController.h"
 #import "ChooserButton.h"
 #include <math.h>
 
+#define SCREEN_WIDTH 320
+#define THUMBNAIL_SIZE 90
+#define THUMBNAIL_MARGIN 12.5
 
 @implementation ChooserViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Badgers";
-        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self action:@selector(close:)];
-        self.navigationItem.rightBarButtonItem = doneButton;
-        [doneButton release];
+        UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(close:)];
+        self.navigationItem.rightBarButtonItem = cancelButton;
+        [cancelButton release];
     
     }
     return self;
+    
 }
 
 - (id)delegate {
@@ -37,7 +42,6 @@
 - (void)close:(id)sender {
     
     if([[self delegate] respondsToSelector:@selector(chooserViewController: didChangeBadger:)]) {
-        
         if([sender isKindOfClass:[ChooserButton class]]) {
             ChooserButton *button = (ChooserButton *)sender;
             [[self delegate] chooserViewController:self didChangeBadger:button.imageView.image];
@@ -45,23 +49,24 @@
             [[self delegate] chooserViewController:self didChangeBadger:nil];
         }
 	}
+    
 }
 
 - (void)layoutBadgerButtons:(NSArray *)badgerButtons {
     
-    float x = 12.5;
-    float y = 12.5;
+    float x = THUMBNAIL_MARGIN;
+    float y = THUMBNAIL_MARGIN;
     
     for (ChooserButton *badgerButton in badgerButtons) {
-        [badgerButton setFrame:CGRectMake(x, y, 90, 90)];
+        [badgerButton setFrame:CGRectMake(x, y, THUMBNAIL_SIZE, THUMBNAIL_SIZE)];
         [badgerButton addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:badgerButton];
         
-        x+= 102.5;
+        x+= THUMBNAIL_SIZE + THUMBNAIL_MARGIN;
         
-        if((fmod(x, 320)) == 0.0) {
-            x = 12.5;
-            y += 102.5;
+        if((fmod(x, SCREEN_WIDTH)) == 0.0) {
+            x = THUMBNAIL_MARGIN;
+            y += THUMBNAIL_SIZE + THUMBNAIL_MARGIN;
         }
     }
     
