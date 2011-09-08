@@ -7,7 +7,6 @@
 //
 
 #import "BadgerLargerAppDelegate.h"
-
 #import "BadgerLargerViewController.h"
 
 @implementation BadgerLargerAppDelegate

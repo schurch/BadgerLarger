@@ -10,12 +10,15 @@
 
 @interface ChooserViewController : UIViewController  {
     id delegate;
+    IBOutlet UIScrollView *scrollView;
 }
+
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
 - (id)delegate;
 - (void)setDelegate:(id)newDelegate;
 - (void)close:(id)sender;
-- (void)layoutBadgerButtons:(NSArray *)badgerButtons;
+- (int)layoutBadgerButtons:(NSArray *)badgerButtons;
 
 @end
 

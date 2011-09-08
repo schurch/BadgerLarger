@@ -10,9 +10,12 @@
 
 
 @interface ChooserButton : UIButton {
-   
+    NSString *badgerImagePath;
 }
 
-- (id)initWithBadgerImage:(UIImage *)image;
+@property (nonatomic, retain) NSString *badgerImagePath;
+
+- (UIImage *)badgerImage;
+- (id)initWithBadgerThumbImagePath:(NSString *)thumb badgerImagePath:(NSString *)image;
 
 @end

@@ -9,18 +9,40 @@
 /* Begin PBXBuildFile section */
 		FD0C207B141430A300F3A1BE /* ChooserButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0C207A141430A300F3A1BE /* ChooserButton.m */; };
 		FD0C207F1414392300F3A1BE /* icon_settings 20.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0C207E1414392300F3A1BE /* icon_settings 20.png */; };
-		FD0C208214144BDC00F3A1BE /* badger1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD0C208114144BDC00F3A1BE /* badger1.jpg */; };
-		FD0C208814144E2300F3A1BE /* badger2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD0C208314144E2300F3A1BE /* badger2.jpg */; };
-		FD0C208914144E2300F3A1BE /* badger3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD0C208414144E2300F3A1BE /* badger3.jpg */; };
-		FD0C208A14144E2300F3A1BE /* badger4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD0C208514144E2300F3A1BE /* badger4.jpg */; };
-		FD0C208B14144E2300F3A1BE /* badger5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD0C208614144E2300F3A1BE /* badger5.jpg */; };
-		FD0C208C14144E2300F3A1BE /* badger6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD0C208714144E2300F3A1BE /* badger6.jpg */; };
-		FDB6F8C7141764FB00F67A1F /* badger1.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FD0C208114144BDC00F3A1BE /* badger1.jpg */; };
-		FDB6F8C8141764FB00F67A1F /* badger2.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FD0C208314144E2300F3A1BE /* badger2.jpg */; };
-		FDB6F8C9141764FB00F67A1F /* badger3.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FD0C208414144E2300F3A1BE /* badger3.jpg */; };
-		FDB6F8CA141764FB00F67A1F /* badger4.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FD0C208514144E2300F3A1BE /* badger4.jpg */; };
-		FDB6F8CB141764FB00F67A1F /* badger5.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FD0C208614144E2300F3A1BE /* badger5.jpg */; };
-		FDB6F8CC141764FB00F67A1F /* badger6.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FD0C208714144E2300F3A1BE /* badger6.jpg */; };
+		FD17095A1418D0F0000A9BA1 /* badger_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FD1709591418D0F0000A9BA1 /* badger_icon.png */; };
+		FDBFBC5C141838A300815898 /* badger1_thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC4C141838A300815898 /* badger1_thumb.jpg */; };
+		FDBFBC5D141838A300815898 /* badger1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC4D141838A300815898 /* badger1.jpg */; };
+		FDBFBC5E141838A300815898 /* badger2_thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC4E141838A300815898 /* badger2_thumb.jpg */; };
+		FDBFBC5F141838A300815898 /* badger2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC4F141838A300815898 /* badger2.jpg */; };
+		FDBFBC60141838A300815898 /* badger3_thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC50141838A300815898 /* badger3_thumb.jpg */; };
+		FDBFBC61141838A300815898 /* badger3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC51141838A300815898 /* badger3.jpg */; };
+		FDBFBC62141838A300815898 /* badger4_thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC52141838A300815898 /* badger4_thumb.jpg */; };
+		FDBFBC63141838A300815898 /* badger4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC53141838A300815898 /* badger4.jpg */; };
+		FDBFBC64141838A300815898 /* badger5_thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC54141838A300815898 /* badger5_thumb.jpg */; };
+		FDBFBC65141838A300815898 /* badger5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC55141838A300815898 /* badger5.jpg */; };
+		FDBFBC66141838A300815898 /* badger6_thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC56141838A300815898 /* badger6_thumb.jpg */; };
+		FDBFBC67141838A300815898 /* badger6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC57141838A300815898 /* badger6.jpg */; };
+		FDBFBC68141838A300815898 /* badger7_thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC58141838A300815898 /* badger7_thumb.jpg */; };
+		FDBFBC69141838A300815898 /* badger7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC59141838A300815898 /* badger7.jpg */; };
+		FDBFBC6A141838A300815898 /* badger8_thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC5A141838A300815898 /* badger8_thumb.jpg */; };
+		FDBFBC6B141838A300815898 /* badger8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC5B141838A300815898 /* badger8.jpg */; };
+		FDBFBC6C141838BC00815898 /* badger1_thumb.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC4C141838A300815898 /* badger1_thumb.jpg */; };
+		FDBFBC6D141838BC00815898 /* badger1.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC4D141838A300815898 /* badger1.jpg */; };
+		FDBFBC6E141838BC00815898 /* badger2_thumb.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC4E141838A300815898 /* badger2_thumb.jpg */; };
+		FDBFBC6F141838BC00815898 /* badger2.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC4F141838A300815898 /* badger2.jpg */; };
+		FDBFBC70141838BC00815898 /* badger3_thumb.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC50141838A300815898 /* badger3_thumb.jpg */; };
+		FDBFBC71141838BC00815898 /* badger3.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC51141838A300815898 /* badger3.jpg */; };
+		FDBFBC72141838BC00815898 /* badger4_thumb.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC52141838A300815898 /* badger4_thumb.jpg */; };
+		FDBFBC73141838BC00815898 /* badger4.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC53141838A300815898 /* badger4.jpg */; };
+		FDBFBC74141838BC00815898 /* badger5_thumb.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC54141838A300815898 /* badger5_thumb.jpg */; };
+		FDBFBC75141838BC00815898 /* badger5.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC55141838A300815898 /* badger5.jpg */; };
+		FDBFBC76141838BC00815898 /* badger6_thumb.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC56141838A300815898 /* badger6_thumb.jpg */; };
+		FDBFBC77141838BC00815898 /* badger6.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC57141838A300815898 /* badger6.jpg */; };
+		FDBFBC78141838BC00815898 /* badger7_thumb.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC58141838A300815898 /* badger7_thumb.jpg */; };
+		FDBFBC79141838BC00815898 /* badger7.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC59141838A300815898 /* badger7.jpg */; };
+		FDBFBC7A141838BC00815898 /* badger8_thumb.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC5A141838A300815898 /* badger8_thumb.jpg */; };
+		FDBFBC7B141838BC00815898 /* badger8.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDBFBC5B141838A300815898 /* badger8.jpg */; };
+		FDBFBC7D14183D9600815898 /* magnifying-glass-zoom.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC7C14183D9600815898 /* magnifying-glass-zoom.png */; };
 		FDE706431413BEF60032ACD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706421413BEF60032ACD0 /* UIKit.framework */; };
 		FDE706451413BEF60032ACD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706441413BEF60032ACD0 /* Foundation.framework */; };
 		FDE706471413BEF60032ACD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706461413BEF60032ACD0 /* CoreGraphics.framework */; };
@@ -36,7 +58,6 @@
 		FDE7066D1413BEF60032ACD0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDE7066B1413BEF60032ACD0 /* InfoPlist.strings */; };
 		FDE706701413BEF60032ACD0 /* BadgerLargerTests.h in Resources */ = {isa = PBXBuildFile; fileRef = FDE7066F1413BEF60032ACD0 /* BadgerLargerTests.h */; };
 		FDE706721413BEF60032ACD0 /* BadgerLargerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE706711413BEF60032ACD0 /* BadgerLargerTests.m */; };
-		FDE706811413BFF00032ACD0 /* badger_icon_green.png in Resources */ = {isa = PBXBuildFile; fileRef = FDE7067F1413BFF00032ACD0 /* badger_icon_green.png */; };
 		FDE706851413C1170032ACD0 /* ChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE706831413C1170032ACD0 /* ChooserViewController.m */; };
 		FDE706861413C1170032ACD0 /* ChooserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE706841413C1170032ACD0 /* ChooserViewController.xib */; };
 		FDE70695141424540032ACD0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE70694141424540032ACD0 /* QuartzCore.framework */; };
@@ -59,12 +80,22 @@
 			dstPath = Badgers;
 			dstSubfolderSpec = 7;
 			files = (
-				FDB6F8C7141764FB00F67A1F /* badger1.jpg in CopyFiles */,
-				FDB6F8C8141764FB00F67A1F /* badger2.jpg in CopyFiles */,
-				FDB6F8C9141764FB00F67A1F /* badger3.jpg in CopyFiles */,
-				FDB6F8CA141764FB00F67A1F /* badger4.jpg in CopyFiles */,
-				FDB6F8CB141764FB00F67A1F /* badger5.jpg in CopyFiles */,
-				FDB6F8CC141764FB00F67A1F /* badger6.jpg in CopyFiles */,
+				FDBFBC6C141838BC00815898 /* badger1_thumb.jpg in CopyFiles */,
+				FDBFBC6D141838BC00815898 /* badger1.jpg in CopyFiles */,
+				FDBFBC6E141838BC00815898 /* badger2_thumb.jpg in CopyFiles */,
+				FDBFBC6F141838BC00815898 /* badger2.jpg in CopyFiles */,
+				FDBFBC70141838BC00815898 /* badger3_thumb.jpg in CopyFiles */,
+				FDBFBC71141838BC00815898 /* badger3.jpg in CopyFiles */,
+				FDBFBC72141838BC00815898 /* badger4_thumb.jpg in CopyFiles */,
+				FDBFBC73141838BC00815898 /* badger4.jpg in CopyFiles */,
+				FDBFBC74141838BC00815898 /* badger5_thumb.jpg in CopyFiles */,
+				FDBFBC75141838BC00815898 /* badger5.jpg in CopyFiles */,
+				FDBFBC76141838BC00815898 /* badger6_thumb.jpg in CopyFiles */,
+				FDBFBC77141838BC00815898 /* badger6.jpg in CopyFiles */,
+				FDBFBC78141838BC00815898 /* badger7_thumb.jpg in CopyFiles */,
+				FDBFBC79141838BC00815898 /* badger7.jpg in CopyFiles */,
+				FDBFBC7A141838BC00815898 /* badger8_thumb.jpg in CopyFiles */,
+				FDBFBC7B141838BC00815898 /* badger8.jpg in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +105,24 @@
 		FD0C2079141430A300F3A1BE /* ChooserButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooserButton.h; sourceTree = "<group>"; };
 		FD0C207A141430A300F3A1BE /* ChooserButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooserButton.m; sourceTree = "<group>"; };
 		FD0C207E1414392300F3A1BE /* icon_settings 20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_settings 20.png"; path = "../../../../Downloads/twg_iphone_toolbar_icons/icon_settings 20.png"; sourceTree = "<group>"; };
-		FD0C208114144BDC00F3A1BE /* badger1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger1.jpg; path = badgers/badger1.jpg; sourceTree = "<group>"; };
-		FD0C208314144E2300F3A1BE /* badger2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger2.jpg; path = badgers/badger2.jpg; sourceTree = "<group>"; };
-		FD0C208414144E2300F3A1BE /* badger3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger3.jpg; path = badgers/badger3.jpg; sourceTree = "<group>"; };
-		FD0C208514144E2300F3A1BE /* badger4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger4.jpg; path = badgers/badger4.jpg; sourceTree = "<group>"; };
-		FD0C208614144E2300F3A1BE /* badger5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger5.jpg; path = badgers/badger5.jpg; sourceTree = "<group>"; };
-		FD0C208714144E2300F3A1BE /* badger6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger6.jpg; path = badgers/badger6.jpg; sourceTree = "<group>"; };
+		FD1709591418D0F0000A9BA1 /* badger_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = badger_icon.png; path = ../../../../Desktop/badger_icon.png; sourceTree = "<group>"; };
+		FDBFBC4C141838A300815898 /* badger1_thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger1_thumb.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger1_thumb.jpg"; sourceTree = "<group>"; };
+		FDBFBC4D141838A300815898 /* badger1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger1.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger1.jpg"; sourceTree = "<group>"; };
+		FDBFBC4E141838A300815898 /* badger2_thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger2_thumb.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger2_thumb.jpg"; sourceTree = "<group>"; };
+		FDBFBC4F141838A300815898 /* badger2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger2.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger2.jpg"; sourceTree = "<group>"; };
+		FDBFBC50141838A300815898 /* badger3_thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger3_thumb.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger3_thumb.jpg"; sourceTree = "<group>"; };
+		FDBFBC51141838A300815898 /* badger3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger3.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger3.jpg"; sourceTree = "<group>"; };
+		FDBFBC52141838A300815898 /* badger4_thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger4_thumb.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger4_thumb.jpg"; sourceTree = "<group>"; };
+		FDBFBC53141838A300815898 /* badger4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger4.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger4.jpg"; sourceTree = "<group>"; };
+		FDBFBC54141838A300815898 /* badger5_thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger5_thumb.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger5_thumb.jpg"; sourceTree = "<group>"; };
+		FDBFBC55141838A300815898 /* badger5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger5.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger5.jpg"; sourceTree = "<group>"; };
+		FDBFBC56141838A300815898 /* badger6_thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger6_thumb.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger6_thumb.jpg"; sourceTree = "<group>"; };
+		FDBFBC57141838A300815898 /* badger6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger6.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger6.jpg"; sourceTree = "<group>"; };
+		FDBFBC58141838A300815898 /* badger7_thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger7_thumb.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger7_thumb.jpg"; sourceTree = "<group>"; };
+		FDBFBC59141838A300815898 /* badger7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger7.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger7.jpg"; sourceTree = "<group>"; };
+		FDBFBC5A141838A300815898 /* badger8_thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger8_thumb.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger8_thumb.jpg"; sourceTree = "<group>"; };
+		FDBFBC5B141838A300815898 /* badger8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger8.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger8.jpg"; sourceTree = "<group>"; };
+		FDBFBC7C14183D9600815898 /* magnifying-glass-zoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "magnifying-glass-zoom.png"; path = "../../../../Desktop/magnifying-glass-zoom.png"; sourceTree = "<group>"; };
 		FDE7063E1413BEF60032ACD0 /* BadgerLarger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadgerLarger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE706421413BEF60032ACD0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FDE706441413BEF60032ACD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -100,7 +143,6 @@
 		FDE7066E1413BEF60032ACD0 /* BadgerLargerTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BadgerLargerTests-Prefix.pch"; sourceTree = "<group>"; };
 		FDE7066F1413BEF60032ACD0 /* BadgerLargerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BadgerLargerTests.h; sourceTree = "<group>"; };
 		FDE706711413BEF60032ACD0 /* BadgerLargerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgerLargerTests.m; sourceTree = "<group>"; };
-		FDE7067F1413BFF00032ACD0 /* badger_icon_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badger_icon_green.png; sourceTree = "<group>"; };
 		FDE706821413C1170032ACD0 /* ChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooserViewController.h; sourceTree = "<group>"; };
 		FDE706831413C1170032ACD0 /* ChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooserViewController.m; sourceTree = "<group>"; };
 		FDE706841413C1170032ACD0 /* ChooserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooserViewController.xib; sourceTree = "<group>"; };
@@ -135,12 +177,22 @@
 		FD0C2080141439A400F3A1BE /* Badgers */ = {
 			isa = PBXGroup;
 			children = (
-				FD0C208114144BDC00F3A1BE /* badger1.jpg */,
-				FD0C208314144E2300F3A1BE /* badger2.jpg */,
-				FD0C208414144E2300F3A1BE /* badger3.jpg */,
-				FD0C208514144E2300F3A1BE /* badger4.jpg */,
-				FD0C208614144E2300F3A1BE /* badger5.jpg */,
-				FD0C208714144E2300F3A1BE /* badger6.jpg */,
+				FDBFBC4C141838A300815898 /* badger1_thumb.jpg */,
+				FDBFBC4D141838A300815898 /* badger1.jpg */,
+				FDBFBC4E141838A300815898 /* badger2_thumb.jpg */,
+				FDBFBC4F141838A300815898 /* badger2.jpg */,
+				FDBFBC50141838A300815898 /* badger3_thumb.jpg */,
+				FDBFBC51141838A300815898 /* badger3.jpg */,
+				FDBFBC52141838A300815898 /* badger4_thumb.jpg */,
+				FDBFBC53141838A300815898 /* badger4.jpg */,
+				FDBFBC54141838A300815898 /* badger5_thumb.jpg */,
+				FDBFBC55141838A300815898 /* badger5.jpg */,
+				FDBFBC56141838A300815898 /* badger6_thumb.jpg */,
+				FDBFBC57141838A300815898 /* badger6.jpg */,
+				FDBFBC58141838A300815898 /* badger7_thumb.jpg */,
+				FDBFBC59141838A300815898 /* badger7.jpg */,
+				FDBFBC5A141838A300815898 /* badger8_thumb.jpg */,
+				FDBFBC5B141838A300815898 /* badger8.jpg */,
 			);
 			name = Badgers;
 			sourceTree = "<group>";
@@ -206,7 +258,8 @@
 		FDE706491413BEF60032ACD0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FDE7067F1413BFF00032ACD0 /* badger_icon_green.png */,
+				FD1709591418D0F0000A9BA1 /* badger_icon.png */,
+				FDBFBC7C14183D9600815898 /* magnifying-glass-zoom.png */,
 				FD0C207E1414392300F3A1BE /* icon_settings 20.png */,
 				FDE7064A1413BEF60032ACD0 /* BadgerLarger-Info.plist */,
 				FDE7064B1413BEF60032ACD0 /* InfoPlist.strings */,
@@ -307,15 +360,26 @@
 				FDE7064D1413BEF60032ACD0 /* InfoPlist.strings in Resources */,
 				FDE706561413BEF60032ACD0 /* MainWindow.xib in Resources */,
 				FDE7065C1413BEF60032ACD0 /* BadgerLargerViewController.xib in Resources */,
-				FDE706811413BFF00032ACD0 /* badger_icon_green.png in Resources */,
 				FDE706861413C1170032ACD0 /* ChooserViewController.xib in Resources */,
 				FD0C207F1414392300F3A1BE /* icon_settings 20.png in Resources */,
-				FD0C208214144BDC00F3A1BE /* badger1.jpg in Resources */,
-				FD0C208814144E2300F3A1BE /* badger2.jpg in Resources */,
-				FD0C208914144E2300F3A1BE /* badger3.jpg in Resources */,
-				FD0C208A14144E2300F3A1BE /* badger4.jpg in Resources */,
-				FD0C208B14144E2300F3A1BE /* badger5.jpg in Resources */,
-				FD0C208C14144E2300F3A1BE /* badger6.jpg in Resources */,
+				FDBFBC5C141838A300815898 /* badger1_thumb.jpg in Resources */,
+				FDBFBC5D141838A300815898 /* badger1.jpg in Resources */,
+				FDBFBC5E141838A300815898 /* badger2_thumb.jpg in Resources */,
+				FDBFBC5F141838A300815898 /* badger2.jpg in Resources */,
+				FDBFBC60141838A300815898 /* badger3_thumb.jpg in Resources */,
+				FDBFBC61141838A300815898 /* badger3.jpg in Resources */,
+				FDBFBC62141838A300815898 /* badger4_thumb.jpg in Resources */,
+				FDBFBC63141838A300815898 /* badger4.jpg in Resources */,
+				FDBFBC64141838A300815898 /* badger5_thumb.jpg in Resources */,
+				FDBFBC65141838A300815898 /* badger5.jpg in Resources */,
+				FDBFBC66141838A300815898 /* badger6_thumb.jpg in Resources */,
+				FDBFBC67141838A300815898 /* badger6.jpg in Resources */,
+				FDBFBC68141838A300815898 /* badger7_thumb.jpg in Resources */,
+				FDBFBC69141838A300815898 /* badger7.jpg in Resources */,
+				FDBFBC6A141838A300815898 /* badger8_thumb.jpg in Resources */,
+				FDBFBC6B141838A300815898 /* badger8.jpg in Resources */,
+				FDBFBC7D14183D9600815898 /* magnifying-glass-zoom.png in Resources */,
+				FD17095A1418D0F0000A9BA1 /* badger_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

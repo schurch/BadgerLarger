@@ -12,13 +12,21 @@
 
 @implementation ChooserButton
 
-- (id)initWithBadgerImage:(UIImage *)image {
+@synthesize badgerImagePath;
+
+- (UIImage *)badgerImage {
+    return [UIImage imageWithContentsOfFile:badgerImagePath];
+}
+
+- (id)initWithBadgerThumbImagePath:(NSString *)thumb badgerImagePath:(NSString *)image {
     self = [super init];
     if(self) {
-        [self setImage:image forState:UIControlStateNormal];
+        [self setImage:[UIImage imageWithContentsOfFile:thumb] forState:UIControlStateNormal];
         [self.layer setBorderWidth:1.5];
         [self.layer setCornerRadius:5.0];
         [self.layer setBorderColor:[[UIColor colorWithWhite:0.3 alpha:0.7] CGColor]];
+        
+        self.badgerImagePath = image;
     }
     
     return self;

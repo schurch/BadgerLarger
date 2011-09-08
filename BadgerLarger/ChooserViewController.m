@@ -16,6 +16,8 @@
 
 @implementation ChooserViewController
 
+@synthesize scrollView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     
@@ -44,7 +46,7 @@
     if([[self delegate] respondsToSelector:@selector(chooserViewController: didChangeBadger:)]) {
         if([sender isKindOfClass:[ChooserButton class]]) {
             ChooserButton *button = (ChooserButton *)sender;
-            [[self delegate] chooserViewController:self didChangeBadger:button.imageView.image];
+            [[self delegate] chooserViewController:self didChangeBadger:button.badgerImage];
         } else {
             [[self delegate] chooserViewController:self didChangeBadger:nil];
         }
@@ -52,7 +54,9 @@
     
 }
 
-- (void)layoutBadgerButtons:(NSArray *)badgerButtons {
+- (int)layoutBadgerButtons:(NSArray *)badgerButtons {
+    
+    int rows = 0;
     
     float x = THUMBNAIL_MARGIN;
     float y = THUMBNAIL_MARGIN;
@@ -67,8 +71,11 @@
         if((fmod(x, SCREEN_WIDTH)) == 0.0) {
             x = THUMBNAIL_MARGIN;
             y += THUMBNAIL_SIZE + THUMBNAIL_MARGIN;
+            rows++;
         }
     }
+    
+    return rows;
     
 }
 
@@ -93,19 +100,50 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    NSMutableDictionary *pathLookups = [[NSMutableDictionary alloc] init];
     NSMutableArray *badgerButtons = [[NSMutableArray alloc] init];
     
     NSArray *badgerImagePaths = [[NSBundle mainBundle] pathsForResourcesOfType: @"jpg" inDirectory:@"Badgers"];
     
+    //add thumb paths to dictionary
     for (NSString *imagePath in badgerImagePaths) {
-        NSLog(@"%@", imagePath);
-        ChooserButton *button = [[ChooserButton alloc] initWithBadgerImage:[UIImage imageWithContentsOfFile:imagePath]];
+//        NSLog(@"%@", imagePath);
+        if([imagePath hasSuffix:@"_thumb.jpg"]) {
+            if ([pathLookups objectForKey:imagePath] == nil) {
+                [pathLookups setValue:[NSNull null] forKey:imagePath]; 
+            }
+        }
+    }
+    
+    //add associated large image paths to dictionary
+    for (NSString *imagePath in badgerImagePaths) {
+        if(![imagePath hasSuffix:@"_thumb.jpg"]) {
+            NSString *thumbKey = [imagePath stringByReplacingOccurrencesOfString:@".jpg" withString:@"_thumb.jpg"];
+            if ([[pathLookups allKeys] containsObject:thumbKey]) {
+                [pathLookups setValue:imagePath forKey:thumbKey];
+            }
+        }
+    }
+    
+    for (NSString *thumbPath in pathLookups) {
+        NSLog(@"Thumb path: %@", thumbPath);
+        NSLog(@"Full path: %@", [pathLookups valueForKey:thumbPath]);
+        ChooserButton *button = [[ChooserButton alloc] initWithBadgerThumbImagePath:thumbPath badgerImagePath:[pathLookups valueForKey:thumbPath]];
         [badgerButtons addObject:button];
         [button release];
     }
+
+    int badgerButtonRows = [self layoutBadgerButtons:badgerButtons];
     
-    [self layoutBadgerButtons:badgerButtons];
+    CGFloat scrollViewHeight = (badgerButtonRows * THUMBNAIL_SIZE) + (badgerButtonRows * THUMBNAIL_MARGIN) + THUMBNAIL_MARGIN;
+    
+    //allow slight scrolling even if not enough images
+    scrollViewHeight = (scrollViewHeight < scrollView.frame.size.height) ? scrollView.frame.size.height + 1 : scrollViewHeight;
+    
+    scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, scrollViewHeight); 
+    
     [badgerButtons release];
+    [pathLookups release];
 }
 
 - (void)viewDidUnload
