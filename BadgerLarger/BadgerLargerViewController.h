@@ -13,10 +13,14 @@
     BOOL zoomed;
     IBOutlet UIScrollView *badgerScrollView;
     IBOutlet UIImageView *badgerImageView;
+    IBOutlet UINavigationBar *navigationBar;
+    IBOutlet UIToolbar *toolBar;
 }
 
 @property (nonatomic, retain) IBOutlet UIScrollView *badgerScrollView;
 @property (nonatomic, retain) IBOutlet UIImageView *badgerImageView;
+@property (nonatomic, retain) IBOutlet UINavigationBar *navigationBar;
+@property (nonatomic, retain) IBOutlet UIToolbar *toolBar;
 
 - (IBAction)showBadgerChooser:(id)sender;
 - (CGRect)zoomRectForScrollView:(UIScrollView *)scrollView withScale:(float)scale withCenter:(CGPoint)center;

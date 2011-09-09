@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CreditsViewController.h"
 
-@interface ChooserViewController : UIViewController  {
+@interface ChooserViewController : UIViewController <CreditsDoneDelegate>  {
     id delegate;
     IBOutlet UIScrollView *scrollView;
 }
@@ -17,6 +18,8 @@
 
 - (id)delegate;
 - (void)setDelegate:(id)newDelegate;
+
+- (IBAction)showCredits:(id)sender;
 - (void)close:(id)sender;
 - (int)layoutBadgerButtons:(NSArray *)badgerButtons;
 

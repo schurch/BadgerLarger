@@ -10,6 +10,8 @@
 		FD0C207B141430A300F3A1BE /* ChooserButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0C207A141430A300F3A1BE /* ChooserButton.m */; };
 		FD0C207F1414392300F3A1BE /* icon_settings 20.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0C207E1414392300F3A1BE /* icon_settings 20.png */; };
 		FD17095A1418D0F0000A9BA1 /* badger_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FD1709591418D0F0000A9BA1 /* badger_icon.png */; };
+		FD360D231418DC530025EFC7 /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD360D211418DC530025EFC7 /* CreditsViewController.m */; };
+		FD360D241418DC530025EFC7 /* CreditsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD360D221418DC530025EFC7 /* CreditsView.xib */; };
 		FDBFBC5C141838A300815898 /* badger1_thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC4C141838A300815898 /* badger1_thumb.jpg */; };
 		FDBFBC5D141838A300815898 /* badger1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC4D141838A300815898 /* badger1.jpg */; };
 		FDBFBC5E141838A300815898 /* badger2_thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC4E141838A300815898 /* badger2_thumb.jpg */; };
@@ -51,7 +53,7 @@
 		FDE706531413BEF60032ACD0 /* BadgerLargerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE706521413BEF60032ACD0 /* BadgerLargerAppDelegate.m */; };
 		FDE706561413BEF60032ACD0 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE706541413BEF60032ACD0 /* MainWindow.xib */; };
 		FDE706591413BEF60032ACD0 /* BadgerLargerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE706581413BEF60032ACD0 /* BadgerLargerViewController.m */; };
-		FDE7065C1413BEF60032ACD0 /* BadgerLargerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE7065A1413BEF60032ACD0 /* BadgerLargerViewController.xib */; };
+		FDE7065C1413BEF60032ACD0 /* BadgerLargerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE7065A1413BEF60032ACD0 /* BadgerLargerView.xib */; };
 		FDE706631413BEF60032ACD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706421413BEF60032ACD0 /* UIKit.framework */; };
 		FDE706641413BEF60032ACD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706441413BEF60032ACD0 /* Foundation.framework */; };
 		FDE706651413BEF60032ACD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706461413BEF60032ACD0 /* CoreGraphics.framework */; };
@@ -59,8 +61,9 @@
 		FDE706701413BEF60032ACD0 /* BadgerLargerTests.h in Resources */ = {isa = PBXBuildFile; fileRef = FDE7066F1413BEF60032ACD0 /* BadgerLargerTests.h */; };
 		FDE706721413BEF60032ACD0 /* BadgerLargerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE706711413BEF60032ACD0 /* BadgerLargerTests.m */; };
 		FDE706851413C1170032ACD0 /* ChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE706831413C1170032ACD0 /* ChooserViewController.m */; };
-		FDE706861413C1170032ACD0 /* ChooserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE706841413C1170032ACD0 /* ChooserViewController.xib */; };
+		FDE706861413C1170032ACD0 /* ChooserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE706841413C1170032ACD0 /* ChooserView.xib */; };
 		FDE70695141424540032ACD0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE70694141424540032ACD0 /* QuartzCore.framework */; };
+		FDFE51E5141A1F350067DDB5 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFE51E4141A1F350067DDB5 /* UIColor+CustomColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,9 @@
 		FD0C207A141430A300F3A1BE /* ChooserButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooserButton.m; sourceTree = "<group>"; };
 		FD0C207E1414392300F3A1BE /* icon_settings 20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_settings 20.png"; path = "../../../../Downloads/twg_iphone_toolbar_icons/icon_settings 20.png"; sourceTree = "<group>"; };
 		FD1709591418D0F0000A9BA1 /* badger_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = badger_icon.png; path = ../../../../Desktop/badger_icon.png; sourceTree = "<group>"; };
+		FD360D201418DC530025EFC7 /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
+		FD360D211418DC530025EFC7 /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
+		FD360D221418DC530025EFC7 /* CreditsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditsView.xib; sourceTree = "<group>"; };
 		FDBFBC4C141838A300815898 /* badger1_thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger1_thumb.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger1_thumb.jpg"; sourceTree = "<group>"; };
 		FDBFBC4D141838A300815898 /* badger1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger1.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger1.jpg"; sourceTree = "<group>"; };
 		FDBFBC4E141838A300815898 /* badger2_thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger2_thumb.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger2_thumb.jpg"; sourceTree = "<group>"; };
@@ -136,7 +142,7 @@
 		FDE706551413BEF60032ACD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		FDE706571413BEF60032ACD0 /* BadgerLargerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BadgerLargerViewController.h; sourceTree = "<group>"; };
 		FDE706581413BEF60032ACD0 /* BadgerLargerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgerLargerViewController.m; sourceTree = "<group>"; };
-		FDE7065B1413BEF60032ACD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BadgerLargerViewController.xib; sourceTree = "<group>"; };
+		FDE7065B1413BEF60032ACD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BadgerLargerView.xib; sourceTree = "<group>"; };
 		FDE706621413BEF60032ACD0 /* BadgerLargerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BadgerLargerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE7066A1413BEF60032ACD0 /* BadgerLargerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BadgerLargerTests-Info.plist"; sourceTree = "<group>"; };
 		FDE7066C1413BEF60032ACD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -145,8 +151,10 @@
 		FDE706711413BEF60032ACD0 /* BadgerLargerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgerLargerTests.m; sourceTree = "<group>"; };
 		FDE706821413C1170032ACD0 /* ChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooserViewController.h; sourceTree = "<group>"; };
 		FDE706831413C1170032ACD0 /* ChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooserViewController.m; sourceTree = "<group>"; };
-		FDE706841413C1170032ACD0 /* ChooserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooserViewController.xib; sourceTree = "<group>"; };
+		FDE706841413C1170032ACD0 /* ChooserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooserView.xib; sourceTree = "<group>"; };
 		FDE70694141424540032ACD0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FDFE51E3141A1F350067DDB5 /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
+		FDFE51E4141A1F350067DDB5 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,10 +212,14 @@
 				FDE706521413BEF60032ACD0 /* BadgerLargerAppDelegate.m */,
 				FDE706571413BEF60032ACD0 /* BadgerLargerViewController.h */,
 				FDE706581413BEF60032ACD0 /* BadgerLargerViewController.m */,
+				FD360D201418DC530025EFC7 /* CreditsViewController.h */,
+				FD360D211418DC530025EFC7 /* CreditsViewController.m */,
 				FDE706821413C1170032ACD0 /* ChooserViewController.h */,
 				FDE706831413C1170032ACD0 /* ChooserViewController.m */,
 				FD0C2079141430A300F3A1BE /* ChooserButton.h */,
 				FD0C207A141430A300F3A1BE /* ChooserButton.m */,
+				FDFE51E3141A1F350067DDB5 /* UIColor+CustomColors.h */,
+				FDFE51E4141A1F350067DDB5 /* UIColor+CustomColors.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -248,8 +260,9 @@
 				FD0C2080141439A400F3A1BE /* Badgers */,
 				FDB6F8CD1417844C00F67A1F /* Classes */,
 				FDE706541413BEF60032ACD0 /* MainWindow.xib */,
-				FDE7065A1413BEF60032ACD0 /* BadgerLargerViewController.xib */,
-				FDE706841413C1170032ACD0 /* ChooserViewController.xib */,
+				FD360D221418DC530025EFC7 /* CreditsView.xib */,
+				FDE7065A1413BEF60032ACD0 /* BadgerLargerView.xib */,
+				FDE706841413C1170032ACD0 /* ChooserView.xib */,
 				FDE706491413BEF60032ACD0 /* Supporting Files */,
 			);
 			path = BadgerLarger;
@@ -359,8 +372,8 @@
 			files = (
 				FDE7064D1413BEF60032ACD0 /* InfoPlist.strings in Resources */,
 				FDE706561413BEF60032ACD0 /* MainWindow.xib in Resources */,
-				FDE7065C1413BEF60032ACD0 /* BadgerLargerViewController.xib in Resources */,
-				FDE706861413C1170032ACD0 /* ChooserViewController.xib in Resources */,
+				FDE7065C1413BEF60032ACD0 /* BadgerLargerView.xib in Resources */,
+				FDE706861413C1170032ACD0 /* ChooserView.xib in Resources */,
 				FD0C207F1414392300F3A1BE /* icon_settings 20.png in Resources */,
 				FDBFBC5C141838A300815898 /* badger1_thumb.jpg in Resources */,
 				FDBFBC5D141838A300815898 /* badger1.jpg in Resources */,
@@ -380,6 +393,7 @@
 				FDBFBC6B141838A300815898 /* badger8.jpg in Resources */,
 				FDBFBC7D14183D9600815898 /* magnifying-glass-zoom.png in Resources */,
 				FD17095A1418D0F0000A9BA1 /* badger_icon.png in Resources */,
+				FD360D241418DC530025EFC7 /* CreditsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +434,8 @@
 				FDE706591413BEF60032ACD0 /* BadgerLargerViewController.m in Sources */,
 				FDE706851413C1170032ACD0 /* ChooserViewController.m in Sources */,
 				FD0C207B141430A300F3A1BE /* ChooserButton.m in Sources */,
+				FD360D231418DC530025EFC7 /* CreditsViewController.m in Sources */,
+				FDFE51E5141A1F350067DDB5 /* UIColor+CustomColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,12 +474,12 @@
 			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
-		FDE7065A1413BEF60032ACD0 /* BadgerLargerViewController.xib */ = {
+		FDE7065A1413BEF60032ACD0 /* BadgerLargerView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FDE7065B1413BEF60032ACD0 /* en */,
 			);
-			name = BadgerLargerViewController.xib;
+			name = BadgerLargerView.xib;
 			sourceTree = "<group>";
 		};
 		FDE7066B1413BEF60032ACD0 /* InfoPlist.strings */ = {

@@ -8,27 +8,31 @@
 
 #import "BadgerLargerViewController.h"
 #import "ChooserViewController.h"
+#import "UIColor+CustomColors.h"
 
 @implementation BadgerLargerViewController
 
 @synthesize badgerImageView;
 @synthesize badgerScrollView;
+@synthesize navigationBar;
+@synthesize toolBar;
 
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-    
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView 
+{
     return badgerImageView;
 }
 
-- (IBAction)showBadgerChooser:(id)sender {
+- (IBAction)showBadgerChooser:(id)sender 
+{
     ChooserViewController *chooserViewController = [[ChooserViewController alloc]
-                                                          initWithNibName:@"ChooserViewController" bundle:nil];
+                                                          initWithNibName:@"ChooserView" bundle:nil];
     
     chooserViewController.delegate = self;
     
     UINavigationController *navigationController = [[UINavigationController alloc]
                                                     initWithRootViewController:chooserViewController];
     
-    navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.0/255.0 green:150.0/255.0 blue:0.0/255.0 alpha:1.0];
+    navigationController.navigationBar.tintColor = [UIColor navigationGreenColor];
     
     [self presentModalViewController:navigationController animated:YES];
     
@@ -37,23 +41,23 @@
 }
 
 - (void)chooserViewController:(ChooserViewController *)chooserViewController
-                    didChangeBadger:(UIImage *)badgerImage {
-    
+                    didChangeBadger:(UIImage *)badgerImage 
+{    
     if(badgerImage != nil) {
         [badgerImageView setImage:badgerImage];
         [self resetZoom];
     }
     
-    [self dismissModalViewControllerAnimated:TRUE];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
-- (IBAction)unlargerAction:(id)sender {
-    
+- (IBAction)unlargerAction:(id)sender 
+{
     [self resetZoom];
 }
 
-- (IBAction)largerAction:(id)sender {
-    
+- (IBAction)largerAction:(id)sender 
+{    
     if (zoomed) {
         return;
     }
@@ -75,8 +79,8 @@
     zoomed = TRUE;
 }
 
-- (CGRect)zoomRectForScrollView:(UIScrollView *)scrollView withScale:(float)scale withCenter:(CGPoint)center {
-    
+- (CGRect)zoomRectForScrollView:(UIScrollView *)scrollView withScale:(float)scale withCenter:(CGPoint)center 
+{    
     CGRect zoomRect;
     
     zoomRect.size.height = scrollView.frame.size.height / scale;
@@ -88,8 +92,8 @@
     return zoomRect;
 }
 
-- (void)resetZoom {
-    
+- (void)resetZoom 
+{    
     [badgerScrollView setZoomScale:1.0 animated:NO];
     zoomed = FALSE;
 }
@@ -109,13 +113,16 @@
 
 #pragma mark - View lifecycle
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    navigationBar.tintColor = [UIColor navigationGreenColor];
+    toolBar.tintColor = [UIColor navigationGreenColor];
 }
-*/
+
 
 - (void)viewDidUnload
 {

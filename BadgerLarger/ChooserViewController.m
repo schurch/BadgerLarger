@@ -8,6 +8,7 @@
 
 #import "ChooserViewController.h"
 #import "ChooserButton.h"
+#import "CreditsViewController.h"
 #include <math.h>
 
 #define SCREEN_WIDTH 320
@@ -33,16 +34,34 @@
     
 }
 
-- (id)delegate {
+- (id)delegate 
+{
     return delegate;
 }
 
-- (void)setDelegate:(id)newDelegate {
+- (void)setDelegate:(id)newDelegate 
+{
     delegate = newDelegate;
 }
 
-- (void)close:(id)sender {
+- (IBAction)showCredits:(id)sender 
+{
+    CreditsViewController *creditsViewController = [[CreditsViewController alloc]
+                                                    initWithNibName:@"CreditsView" bundle:nil];
     
+    creditsViewController.delegate = self;
+    creditsViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentModalViewController:creditsViewController animated:YES];
+    [creditsViewController release];
+}
+
+- (void)creditsViewController:(CreditsViewController *)creditsViewController
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)close:(id)sender 
+{    
     if([[self delegate] respondsToSelector:@selector(chooserViewController: didChangeBadger:)]) {
         if([sender isKindOfClass:[ChooserButton class]]) {
             ChooserButton *button = (ChooserButton *)sender;
@@ -54,8 +73,8 @@
     
 }
 
-- (int)layoutBadgerButtons:(NSArray *)badgerButtons {
-    
+- (int)layoutBadgerButtons:(NSArray *)badgerButtons 
+{    
     int rows = 0;
     
     float x = THUMBNAIL_MARGIN;
@@ -64,7 +83,7 @@
     for (ChooserButton *badgerButton in badgerButtons) {
         [badgerButton setFrame:CGRectMake(x, y, THUMBNAIL_SIZE, THUMBNAIL_SIZE)];
         [badgerButton addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:badgerButton];
+        [scrollView addSubview:badgerButton];
         
         x+= THUMBNAIL_SIZE + THUMBNAIL_MARGIN;
         
@@ -76,7 +95,6 @@
     }
     
     return rows;
-    
 }
 
 
@@ -107,7 +125,6 @@
     
     //add thumb paths to dictionary
     for (NSString *imagePath in badgerImagePaths) {
-//        NSLog(@"%@", imagePath);
         if([imagePath hasSuffix:@"_thumb.jpg"]) {
             if ([pathLookups objectForKey:imagePath] == nil) {
                 [pathLookups setValue:[NSNull null] forKey:imagePath]; 
@@ -126,8 +143,6 @@
     }
     
     for (NSString *thumbPath in pathLookups) {
-        NSLog(@"Thumb path: %@", thumbPath);
-        NSLog(@"Full path: %@", [pathLookups valueForKey:thumbPath]);
         ChooserButton *button = [[ChooserButton alloc] initWithBadgerThumbImagePath:thumbPath badgerImagePath:[pathLookups valueForKey:thumbPath]];
         [badgerButtons addObject:button];
         [button release];
@@ -136,9 +151,6 @@
     int badgerButtonRows = [self layoutBadgerButtons:badgerButtons];
     
     CGFloat scrollViewHeight = (badgerButtonRows * THUMBNAIL_SIZE) + (badgerButtonRows * THUMBNAIL_MARGIN) + THUMBNAIL_MARGIN;
-    
-    //allow slight scrolling even if not enough images
-    scrollViewHeight = (scrollViewHeight < scrollView.frame.size.height) ? scrollView.frame.size.height + 1 : scrollViewHeight;
     
     scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, scrollViewHeight); 
     
