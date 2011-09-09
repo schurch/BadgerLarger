@@ -32,4 +32,10 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [badgerImagePath release];
+    [super dealloc];
+}
+
 @end

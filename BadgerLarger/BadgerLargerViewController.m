@@ -100,6 +100,10 @@
 
 - (void)dealloc
 {
+    [badgerImageView release];
+    [badgerScrollView release];
+    [navigationBar release];
+    [toolBar release];
     [super dealloc];
 }
 

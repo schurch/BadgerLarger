@@ -100,6 +100,7 @@
 
 - (void)dealloc
 {
+    [scrollView release];
     [super dealloc];
 }
 

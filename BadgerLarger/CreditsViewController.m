@@ -40,6 +40,7 @@
 
 - (void)dealloc
 {
+    [navigationBar release];
     [super dealloc];
 }
 
