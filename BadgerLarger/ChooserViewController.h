@@ -11,9 +11,11 @@
 
 @interface ChooserViewController : UIViewController <CreditsDoneDelegate>  {
     id delegate;
+    NSArray *badgers;
     IBOutlet UIScrollView *scrollView;
 }
 
+@property (nonatomic, retain) NSArray *badgers;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
 - (id)delegate;

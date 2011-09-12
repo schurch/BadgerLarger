@@ -8,6 +8,7 @@
 
 #import "BadgerLargerAppDelegate.h"
 #import "BadgerLargerViewController.h"
+#import "Badger.h"
 
 @implementation BadgerLargerAppDelegate
 
@@ -19,6 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    NSArray *badgers = [Badger generateBadgerList:@"BadgerSettings.cfg"];
      
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];

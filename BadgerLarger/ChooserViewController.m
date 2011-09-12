@@ -17,6 +17,7 @@
 
 @implementation ChooserViewController
 
+@synthesize badgers;
 @synthesize scrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

@@ -8,10 +8,22 @@
 
 #import "BadgerLargerViewController.h"
 #import "ChooserViewController.h"
+#import "RectangleUtils.h"
 #import "UIColor+CustomColors.h"
+
+#define WIN_TEXT @"WIN"
+#define FAIL_TEXT @"FAIL"
 
 @implementation BadgerLargerViewController
 
+@synthesize badgers;
+@synthesize winFailView;
+@synthesize gameOverView;
+@synthesize gameEngine;
+@synthesize winLabel;
+@synthesize scoreLabel;
+@synthesize finalScoreLabel;
+@synthesize attemptsLabel;
 @synthesize badgerImageView;
 @synthesize badgerScrollView;
 @synthesize navigationBar;
@@ -27,6 +39,7 @@
     ChooserViewController *chooserViewController = [[ChooserViewController alloc]
                                                           initWithNibName:@"ChooserView" bundle:nil];
     
+    chooserViewController.badgers = badger;
     chooserViewController.delegate = self;
     
     UINavigationController *navigationController = [[UINavigationController alloc]
@@ -43,12 +56,98 @@
 - (void)chooserViewController:(ChooserViewController *)chooserViewController
                     didChangeBadger:(UIImage *)badgerImage 
 {    
-    if(badgerImage != nil) {
+    if(badgerImage != nil) 
+    {
         [badgerImageView setImage:badgerImage];
         [self resetZoom];
     }
     
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale
+{    
+    switch (gameEngine.gameStatus) {
+        case GameEngineFinished:
+            winLabel.text = FAIL_TEXT;
+            [self showWinFailScreen];
+            break;
+        case GameEngineWonAndFinished:
+            scoreLabel.text = gameEngine.scoreText;
+            winLabel.text = WIN_TEXT;
+            [self showWinFailScreen];
+            break;
+        case GameEngineWon:
+            scoreLabel.text = gameEngine.scoreText;
+            winLabel.text = WIN_TEXT;
+            [self showWinFailScreen];
+            break;
+        case GameEngineLost:
+            winLabel.text = FAIL_TEXT;
+            [self showWinFailScreen];
+            break;
+        default:
+            break;
+    }
+    
+    self.attemptsLabel.text = gameEngine.attemptsText;
+}
+
+- (void)showWinFailScreen
+{
+    if(!self.winFailView)
+    {
+        [[NSBundle mainBundle] loadNibNamed:@"WinFailView" owner:self options:nil];
+        winFailView.frame = CGRectMake(0, 75, winFailView.frame.size.width, winFailView.frame.size.height);  
+        [self.view addSubview:winFailView];
+    }
+    else
+    {
+        winFailView.hidden = FALSE;
+    }
+    
+    [self shrinkanimate];
+}
+
+- (void)showGameOverScreen 
+{
+    if(!self.gameOverView)
+    {
+        [[NSBundle mainBundle] loadNibNamed:@"GameOverView" owner:self options:nil];
+        gameOverView.frame = CGRectMake(0, 75, gameOverView.frame.size.width, gameOverView.frame.size.height);  
+        [self.view addSubview:gameOverView];
+    }
+    
+    winFailView.hidden = TRUE;    
+    gameOverView.hidden = FALSE;
+    finalScoreLabel.text = gameEngine.scoreText;
+}
+
+- (void)shrinkanimate
+{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.2];
+    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(growanimate)];
+    winLabel.transform = CGAffineTransformMakeScale(0.5f, 0.5f);
+    [UIView commitAnimations];
+}
+
+- (void)growanimate
+{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.2];
+    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    
+    if (gameEngine.gameFinished) 
+    {
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationDidStopSelector:@selector(showGameOverScreen)];
+    }
+
+    winLabel.transform = CGAffineTransformMakeScale(1.0f, 1.0f);
+    [UIView commitAnimations];
 }
 
 - (IBAction)unlargerAction:(id)sender 
@@ -58,42 +157,36 @@
 
 - (IBAction)largerAction:(id)sender 
 {    
-    if (zoomed) {
+    if (zoomed) 
+    {
         return;
     }
     
-    float randomX = (float)(arc4random() % (int)self.badgerScrollView.frame.size.width);
-    float randomY = (float)(arc4random() % (int)self.badgerScrollView.frame.size.height);
-    float randomScale = (float)(arc4random() % (int)self.badgerScrollView.maximumZoomScale);
-    
-    randomScale = randomScale < 2.0 ? 2.0 : randomScale;
-    
-    CGPoint zoomPoint;
-    zoomPoint.x = randomX;
-    zoomPoint.y = randomY;
-    
-    CGRect zoomArea = [self zoomRectForScrollView:badgerScrollView withScale:randomScale withCenter:zoomPoint];
-    
+    CGRect zoomArea = [RectangleUtils randomZoomAreaInRect:badgerScrollView.frame maxZoom:badgerScrollView.maximumZoomScale];
     [badgerScrollView zoomToRect:zoomArea animated:YES];
-    
     zoomed = TRUE;
-}
-
-- (CGRect)zoomRectForScrollView:(UIScrollView *)scrollView withScale:(float)scale withCenter:(CGPoint)center 
-{    
-    CGRect zoomRect;
     
-    zoomRect.size.height = scrollView.frame.size.height / scale;
-    zoomRect.size.width  = scrollView.frame.size.width  / scale;
+    CGRect badgerRect = CGRectMake(10, 115, 270, 238);
     
-    zoomRect.origin.x = center.x - (zoomRect.size.width  / 2.0);
-    zoomRect.origin.y = center.y - (zoomRect.size.height / 2.0);
+    didWin = [RectangleUtils doesRectIntersect:badgerRect rectB:zoomArea];
     
-    return zoomRect;
+    [gameEngine didWin:didWin];
 }
 
 - (void)resetZoom 
 {    
+    if (gameEngine.gameFinished) 
+    {
+        [gameEngine reset];
+        self.scoreLabel.text = gameEngine.scoreText;
+        self.attemptsLabel.text = gameEngine.attemptsText;
+        gameOverView.hidden = TRUE;
+    }
+    else
+    {
+        winFailView.hidden = TRUE;
+    }
+    
     [badgerScrollView setZoomScale:1.0 animated:NO];
     zoomed = FALSE;
 }
@@ -123,8 +216,13 @@
 {
     [super viewDidLoad];
     
+    gameEngine = [[GameEngine alloc] init];
+    
+    badgers = [Badger generateBadgerList:@"BadgerSettings.cfg"];
+    
     navigationBar.tintColor = [UIColor navigationGreenColor];
     toolBar.tintColor = [UIColor navigationGreenColor];
+    attemptsLabel.text = gameEngine.attemptsText;
 }
 
 
