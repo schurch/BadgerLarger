@@ -66,7 +66,8 @@
     if([[self delegate] respondsToSelector:@selector(chooserViewController: didChangeBadger:)]) {
         if([sender isKindOfClass:[ChooserButton class]]) {
             ChooserButton *button = (ChooserButton *)sender;
-            [[self delegate] chooserViewController:self didChangeBadger:button.badgerImage];
+            [[self delegate] chooserViewController:self didChangeBadger:button
+             .badger];
         } else {
             [[self delegate] chooserViewController:self didChangeBadger:nil];
         }
@@ -120,32 +121,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSMutableDictionary *pathLookups = [[NSMutableDictionary alloc] init];
     NSMutableArray *badgerButtons = [[NSMutableArray alloc] init];
     
-    NSArray *badgerImagePaths = [[NSBundle mainBundle] pathsForResourcesOfType: @"jpg" inDirectory:@"Badgers"];
-    
-    //add thumb paths to dictionary
-    for (NSString *imagePath in badgerImagePaths) {
-        if([imagePath hasSuffix:@"_thumb.jpg"]) {
-            if ([pathLookups objectForKey:imagePath] == nil) {
-                [pathLookups setValue:[NSNull null] forKey:imagePath]; 
-            }
-        }
-    }
-    
-    //add associated large image paths to dictionary
-    for (NSString *imagePath in badgerImagePaths) {
-        if(![imagePath hasSuffix:@"_thumb.jpg"]) {
-            NSString *thumbKey = [imagePath stringByReplacingOccurrencesOfString:@".jpg" withString:@"_thumb.jpg"];
-            if ([[pathLookups allKeys] containsObject:thumbKey]) {
-                [pathLookups setValue:imagePath forKey:thumbKey];
-            }
-        }
-    }
-    
-    for (NSString *thumbPath in pathLookups) {
-        ChooserButton *button = [[ChooserButton alloc] initWithBadgerThumbImagePath:thumbPath badgerImagePath:[pathLookups valueForKey:thumbPath]];
+    for (Badger *badger in self.badgers) {
+        ChooserButton *button = [[ChooserButton alloc] initWithBadger:badger];
         [badgerButtons addObject:button];
         [button release];
     }
@@ -157,7 +136,6 @@
     scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, scrollViewHeight); 
     
     [badgerButtons release];
-    [pathLookups release];
 }
 
 - (void)viewDidUnload

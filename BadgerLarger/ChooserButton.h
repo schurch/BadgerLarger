@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Badger.h"
 
 
 @interface ChooserButton : UIButton {
-    NSString *badgerImagePath;
+    Badger *_badger;
 }
 
-@property (nonatomic, retain) NSString *badgerImagePath;
+@property (nonatomic, retain) Badger *badger;
 
-- (UIImage *)badgerImage;
-- (id)initWithBadgerThumbImagePath:(NSString *)thumb badgerImagePath:(NSString *)image;
+- (id)initWithBadger:(Badger *)badger;
 
 @end

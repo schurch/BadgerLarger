@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "CreditsViewController.h"
+#import "Badger.h"
 
 @interface ChooserViewController : UIViewController <CreditsDoneDelegate>  {
     id delegate;
-    NSArray *badgers;
+    NSMutableArray *badgers;
     IBOutlet UIScrollView *scrollView;
 }
 
-@property (nonatomic, retain) NSArray *badgers;
+@property (nonatomic, retain) NSMutableArray *badgers;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
 - (id)delegate;
@@ -28,7 +29,7 @@
 @end
 
 @protocol BadgerChooseDelegate <NSObject>
-// badgerImage  == nil on cancel
+// badger  == nil on cancel
 - (void)chooserViewController:(ChooserViewController *)chooserViewController
-                    didChangeBadger:(UIImage *)badgerImage;
+                    didChangeBadger:(Badger *)badger;
 @end

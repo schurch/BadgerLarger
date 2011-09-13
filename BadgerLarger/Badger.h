@@ -10,12 +10,12 @@
 
 
 @interface Badger : NSObject {
-    NSArray *badgerOutlinePolygon;
+    NSMutableArray *badgerOutlinePolygon;
     NSString *badgerImagePath;
     NSString *badgerThumbImagePath;
 }
 
-- (id)initWithPolygon:(NSArray *)polygon badgerImagePath:(NSString *)imagePath badgerThumbPath:(NSString *)thumbPath;
+- (id)initWithPolygon:(NSMutableArray *)polygon badgerImagePath:(NSString *)imagePath badgerThumbPath:(NSString *)thumbPath;
 
 @property (nonatomic, readonly) NSArray *badgerOutlinePolygon;
 @property (nonatomic, readonly) NSString *badgerImagePath;
@@ -23,6 +23,6 @@
 
 + (NSMutableArray *)generateBadgerList:(NSString *)pathToConfigFile;
 //Expects coords string of the following format: (x,y),(x,y),... with no spaces
-+ (NSMutableArray *)parseCoords:(NSString *)coords;
++ (NSMutableArray *)parseVertices:(NSString *)verticesString;
 
 @end

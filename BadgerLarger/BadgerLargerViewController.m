@@ -10,12 +10,14 @@
 #import "ChooserViewController.h"
 #import "RectangleUtils.h"
 #import "UIColor+CustomColors.h"
+#import "Polygon.h"
 
 #define WIN_TEXT @"WIN"
 #define FAIL_TEXT @"FAIL"
 
 @implementation BadgerLargerViewController
 
+@synthesize currentBadger;
 @synthesize badgers;
 @synthesize winFailView;
 @synthesize gameOverView;
@@ -39,7 +41,7 @@
     ChooserViewController *chooserViewController = [[ChooserViewController alloc]
                                                           initWithNibName:@"ChooserView" bundle:nil];
     
-    chooserViewController.badgers = badger;
+    chooserViewController.badgers = self.badgers;
     chooserViewController.delegate = self;
     
     UINavigationController *navigationController = [[UINavigationController alloc]
@@ -54,11 +56,12 @@
 }
 
 - (void)chooserViewController:(ChooserViewController *)chooserViewController
-                    didChangeBadger:(UIImage *)badgerImage 
+                    didChangeBadger:(Badger *)badger 
 {    
-    if(badgerImage != nil) 
+    if(badger) 
     {
-        [badgerImageView setImage:badgerImage];
+        self.currentBadger = badger; 
+        [badgerImageView setImage:[UIImage imageWithContentsOfFile:badger.badgerImagePath]];
         [self resetZoom];
     }
     
@@ -166,9 +169,13 @@
     [badgerScrollView zoomToRect:zoomArea animated:YES];
     zoomed = TRUE;
     
-    CGRect badgerRect = CGRectMake(10, 115, 270, 238);
+    Polygon *zoomPolygon = [[Polygon alloc] initWithRect:zoomArea];
+    Polygon *badgerPolygon = [[Polygon alloc] initWithVertices:currentBadger.badgerOutlinePolygon];
     
-    didWin = [RectangleUtils doesRectIntersect:badgerRect rectB:zoomArea];
+    didWin = [zoomPolygon doesIntersect:badgerPolygon];
+    
+    [zoomPolygon release];
+    [badgerPolygon release];
     
     [gameEngine didWin:didWin];
 }
@@ -218,11 +225,11 @@
     
     gameEngine = [[GameEngine alloc] init];
     
-    badgers = [Badger generateBadgerList:@"BadgerSettings.cfg"];
-    
     navigationBar.tintColor = [UIColor navigationGreenColor];
     toolBar.tintColor = [UIColor navigationGreenColor];
     attemptsLabel.text = gameEngine.attemptsText;
+    
+    self.currentBadger = [self.badgers objectAtIndex:0];
 }
 
 

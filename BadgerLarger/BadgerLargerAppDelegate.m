@@ -19,10 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // Override point for customization after application launch. 
+    NSMutableArray *loadedBadgers = [Badger generateBadgerList:@"BadgerSettings.cfg"];
+    self.viewController.badgers = loadedBadgers;
     
-    NSArray *badgers = [Badger generateBadgerList:@"BadgerSettings.cfg"];
-     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

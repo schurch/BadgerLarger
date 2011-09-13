@@ -13,7 +13,8 @@
 
 @interface BadgerLargerViewController : UIViewController<UIScrollViewDelegate, BadgerChooseDelegate> {
     GameEngine *gameEngine;
-    NSArray *badgers;
+    NSMutableArray *badgers;
+    Badger *currentBadger;
     BOOL zoomed;
     BOOL didWin;
     IBOutlet UIView *winFailView;
@@ -28,8 +29,9 @@
     IBOutlet UIToolbar *toolBar;
 }
 
-@property (nonatomic, retain) NSArray *badgers;
 @property (nonatomic, retain) UIView *winFailView;
+@property (nonatomic, retain) NSMutableArray *badgers;
+@property (nonatomic, retain) Badger *currentBadger;
 @property (nonatomic, retain) UIView *gameOverView;
 @property (nonatomic, retain) GameEngine *gameEngine;
 @property (nonatomic, retain) IBOutlet UILabel *winLabel;

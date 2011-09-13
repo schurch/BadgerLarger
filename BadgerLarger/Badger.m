@@ -7,7 +7,7 @@
 //
 
 #import "Badger.h"
-#include "Coord.h"
+#include "Vertex.h"
 #include <stdio.h>
 
 const int POINT_ARRAY_SIZE = 10;
@@ -27,7 +27,7 @@ const int POINT_ARRAY_SIZE = 10;
         NSLog(@"ERROR loading config file: %@", [error description]);
     }
     
-    NSMutableArray *badgers = [[[NSMutableArray alloc] init] autorelease];
+    NSMutableArray *badgers = [[NSMutableArray alloc] init];
     
     for (NSString *line in [fileContents componentsSeparatedByString:@"\n"]) 
     {
@@ -59,8 +59,8 @@ const int POINT_ARRAY_SIZE = 10;
         NSLog(@"Thumb file name: %@", thumbName);
         NSString *thumbFilePath = [[NSBundle mainBundle] pathForResource:thumbName ofType:nil inDirectory:@"Badgers"];
         
-        NSString *coords = [lineComponents objectAtIndex:2];        
-        NSArray *parsedCoords = [Badger parseCoords:coords];
+        NSString *vertices = [lineComponents objectAtIndex:2];        
+        NSMutableArray *parsedCoords = [Badger parseVertices:vertices];
         
         Badger *badger = [[Badger alloc] initWithPolygon:parsedCoords badgerImagePath:imageFilePath badgerThumbPath:thumbFilePath];
         [badgers addObject:badger];
@@ -68,44 +68,44 @@ const int POINT_ARRAY_SIZE = 10;
         
     }
     
-    return badgers;
+    return [badgers autorelease];
 }
 
-+ (NSMutableArray *)parseCoords:(NSString *)coordsString
++ (NSMutableArray *)parseVertices:(NSString *)verticesString
 {
-    NSMutableArray *coords = [[[NSMutableArray alloc] init] autorelease];
+    NSMutableArray *vertices = [[NSMutableArray alloc] init];
     
     bool readingX = true;
     
-    char *currentXCoord = (char *)malloc(sizeof(char) * POINT_ARRAY_SIZE);
-    char *currentYCoord = (char *)malloc(sizeof(char) * POINT_ARRAY_SIZE);
+    char *currentX = (char *)malloc(sizeof(char) * POINT_ARRAY_SIZE);
+    char *currentY = (char *)malloc(sizeof(char) * POINT_ARRAY_SIZE);
     
-    char *currentXCoordStart = currentXCoord;
-    char *currentYCoordStart = currentYCoord;
+    char *currentXPointer = currentX;
+    char *currentYPointer = currentY;
     
-    for (int i = 0; i < [coordsString length]; i++) 
+    for (int i = 0; i < [verticesString length]; i++) 
     {
-        char character = (char)[coordsString characterAtIndex:i];
+        char character = (char)[verticesString characterAtIndex:i];
         
         switch (character) {
             case '(': //start reading x and y
                 break;
             case ')': //finished reading x and y value for 1 coord
-                *currentXCoord = '\0';
-                *currentYCoord = '\0';
+                *currentX = '\0';
+                *currentY = '\0';
                 
-                float xCoord = atof(currentXCoordStart);
-                float yCoord = atof(currentYCoordStart);
+                float x = atof(currentXPointer);
+                float y = atof(currentYPointer);
             
-                Coord *currentPoint = [[Coord alloc] initWithX:xCoord y:yCoord];              
-                [coords addObject:currentPoint];
+                Vertex *currentPoint = [[Vertex alloc] initWithX:x y:y];              
+                [vertices addObject:currentPoint];
                 [currentPoint release];
 
-                currentXCoord = currentXCoordStart;
-                currentYCoord = currentYCoordStart;
+                currentX = currentXPointer;
+                currentY = currentYPointer;
                 
-                memset(currentXCoord, 0, POINT_ARRAY_SIZE);
-                memset(currentYCoord, 0, POINT_ARRAY_SIZE);
+                memset(currentX, 0, POINT_ARRAY_SIZE);
+                memset(currentY, 0, POINT_ARRAY_SIZE);
                 
                 break;
             case ',': //either ',' between x & y -- (,) -- or  between coord -- ),( --
@@ -114,25 +114,25 @@ const int POINT_ARRAY_SIZE = 10;
             default:
                 if (readingX) 
                 {
-                    *currentXCoord = character;
-                    currentXCoord++;
+                    *currentX = character;
+                    currentX++;
                 }
                 else
                 {
-                    *currentYCoord = character;
-                    currentYCoord++;
+                    *currentY = character;
+                    currentY++;
                 }
                 break;
         }
     }
     
-    free(currentXCoord);
-    free(currentYCoord);
+    free(currentX);
+    free(currentY);
     
-    return coords;
+    return [vertices autorelease];
 }
 
-- (id)initWithPolygon:(NSArray *)polygon badgerImagePath:(NSString *)imagePath badgerThumbPath:(NSString *)thumbPath
+- (id)initWithPolygon:(NSMutableArray *)polygon badgerImagePath:(NSString *)imagePath badgerThumbPath:(NSString *)thumbPath
 {
     self = [super init];
     
