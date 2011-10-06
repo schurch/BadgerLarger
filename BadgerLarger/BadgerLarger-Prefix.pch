@@ -4,6 +4,13 @@
 
 #import <Availability.h>
 
+#define MALLOC(p, b, s, t) {if ((b) > 0) { \
+                p= (t*)malloc(b); if (!(p)) { \
+                fprintf(stderr, "gpc malloc failure: %s\n", s); \
+                exit(0);}} else p= NULL;}
+
+#define FREE(p) {if (p) {free(p); (p)= NULL;}}
+
 #ifndef __IPHONE_3_0
 #warning "This project uses features only available in iPhone SDK 3.0 and later."
 #endif

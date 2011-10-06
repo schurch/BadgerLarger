@@ -11,6 +11,7 @@
 		FD0C207F1414392300F3A1BE /* icon_settings 20.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0C207E1414392300F3A1BE /* icon_settings 20.png */; };
 		FD0F72A7141F79B3003FC650 /* Polygon.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0F72A6141F79B2003FC650 /* Polygon.m */; };
 		FD17095A1418D0F0000A9BA1 /* badger_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FD1709591418D0F0000A9BA1 /* badger_icon.png */; };
+		FD2439AF1439142700F89A69 /* PolygonView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2439AE1439142700F89A69 /* PolygonView.m */; };
 		FD360D231418DC530025EFC7 /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD360D211418DC530025EFC7 /* CreditsViewController.m */; };
 		FD360D241418DC530025EFC7 /* CreditsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD360D221418DC530025EFC7 /* CreditsView.xib */; };
 		FD504380141E5BDC007955EE /* gpc.c in Sources */ = {isa = PBXBuildFile; fileRef = FD50437E141E5BDC007955EE /* gpc.c */; };
@@ -130,6 +131,8 @@
 		FD0F72A5141F79B2003FC650 /* Polygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polygon.h; sourceTree = "<group>"; };
 		FD0F72A6141F79B2003FC650 /* Polygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Polygon.m; sourceTree = "<group>"; };
 		FD1709591418D0F0000A9BA1 /* badger_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = badger_icon.png; path = ../../../../Desktop/badger_icon.png; sourceTree = "<group>"; };
+		FD2439AD1439142700F89A69 /* PolygonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolygonView.h; sourceTree = "<group>"; };
+		FD2439AE1439142700F89A69 /* PolygonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolygonView.m; sourceTree = "<group>"; };
 		FD360D201418DC530025EFC7 /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
 		FD360D211418DC530025EFC7 /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
 		FD360D221418DC530025EFC7 /* CreditsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditsView.xib; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 				FD7EC317141E3A550037AE05 /* Vertex.m */,
 				FD0F72A5141F79B2003FC650 /* Polygon.h */,
 				FD0F72A6141F79B2003FC650 /* Polygon.m */,
+				FD2439AD1439142700F89A69 /* PolygonView.h */,
+				FD2439AE1439142700F89A69 /* PolygonView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -494,6 +499,7 @@
 				FD7EC318141E3A550037AE05 /* Vertex.m in Sources */,
 				FD504380141E5BDC007955EE /* gpc.c in Sources */,
 				FD0F72A7141F79B3003FC650 /* Polygon.m in Sources */,
+				FD2439AF1439142700F89A69 /* PolygonView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

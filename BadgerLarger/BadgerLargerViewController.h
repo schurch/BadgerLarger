@@ -10,8 +10,13 @@
 #import "ChooserViewController.h"
 #import "GameEngine.h"
 #import "Badger.h"
+#import "Polygon.h"
+#import "PolygonView.h"
 
-@interface BadgerLargerViewController : UIViewController<UIScrollViewDelegate, BadgerChooseDelegate> {
+@interface BadgerLargerViewController : UIViewController<UIScrollViewDelegate, BadgerChooseDelegate> 
+{
+    PolygonView *polygonView;
+    NSString *winLabelText;
     GameEngine *gameEngine;
     NSMutableArray *badgers;
     Badger *currentBadger;
@@ -27,8 +32,11 @@
     IBOutlet UIImageView *badgerImageView;
     IBOutlet UINavigationBar *navigationBar;
     IBOutlet UIToolbar *toolBar;
+    UILabel *_winFailLabel;
 }
 
+@property (nonatomic, retain) IBOutlet UILabel *winFailLabel;
+@property (nonatomic, retain) NSString *winLabelText;
 @property (nonatomic, retain) UIView *winFailView;
 @property (nonatomic, retain) NSMutableArray *badgers;
 @property (nonatomic, retain) Badger *currentBadger;
@@ -42,6 +50,7 @@
 @property (nonatomic, retain) IBOutlet UIImageView *badgerImageView;
 @property (nonatomic, retain) IBOutlet UINavigationBar *navigationBar;
 @property (nonatomic, retain) IBOutlet UIToolbar *toolBar;
+@property (nonatomic, retain) PolygonView *polygonView;
 
 - (void)growanimate;
 - (void)shrinkanimate;

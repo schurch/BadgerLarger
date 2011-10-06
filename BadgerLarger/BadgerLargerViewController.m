@@ -17,6 +17,9 @@
 
 @implementation BadgerLargerViewController
 
+@synthesize polygonView;
+@synthesize winFailLabel = _winFailLabel;
+@synthesize winLabelText;
 @synthesize currentBadger;
 @synthesize badgers;
 @synthesize winFailView;
@@ -72,21 +75,21 @@
 {    
     switch (gameEngine.gameStatus) {
         case GameEngineFinished:
-            winLabel.text = FAIL_TEXT;
+            winLabelText = FAIL_TEXT;
             [self showWinFailScreen];
             break;
         case GameEngineWonAndFinished:
             scoreLabel.text = gameEngine.scoreText;
-            winLabel.text = WIN_TEXT;
+            winLabelText = WIN_TEXT;
             [self showWinFailScreen];
             break;
         case GameEngineWon:
             scoreLabel.text = gameEngine.scoreText;
-            winLabel.text = WIN_TEXT;
+            winLabelText = WIN_TEXT;
             [self showWinFailScreen];
             break;
         case GameEngineLost:
-            winLabel.text = FAIL_TEXT;
+            winLabelText = FAIL_TEXT;
             [self showWinFailScreen];
             break;
         default:
@@ -102,10 +105,12 @@
     {
         [[NSBundle mainBundle] loadNibNamed:@"WinFailView" owner:self options:nil];
         winFailView.frame = CGRectMake(0, 75, winFailView.frame.size.width, winFailView.frame.size.height);  
+        winLabel.text = winLabelText;
         [self.view addSubview:winFailView];
     }
     else
     {
+        winLabel.text = winLabelText;
         winFailView.hidden = FALSE;
     }
     
@@ -159,29 +164,39 @@
 }
 
 - (IBAction)largerAction:(id)sender 
-{    
+{        
     if (zoomed) 
     {
         return;
     }
     
     CGRect zoomArea = [RectangleUtils randomZoomAreaInRect:badgerScrollView.frame maxZoom:badgerScrollView.maximumZoomScale];
-    [badgerScrollView zoomToRect:zoomArea animated:YES];
-    zoomed = TRUE;
-    
+
     Polygon *zoomPolygon = [[Polygon alloc] initWithRect:zoomArea];
     Polygon *badgerPolygon = [[Polygon alloc] initWithVertices:currentBadger.badgerOutlinePolygon];
     
-    didWin = [zoomPolygon doesIntersect:badgerPolygon];
+    NSArray *polygons = [[NSArray alloc] initWithObjects:badgerPolygon, zoomPolygon, nil];
     
+    [polygonView drawPolygons:polygons];
+    
+    didWin = [zoomPolygon doesIntersect:badgerPolygon];
+    self.winFailLabel.text = didWin ? @"WIN" : @"FAIL";
+
     [zoomPolygon release];
     [badgerPolygon release];
     
+//    [badgerScrollView zoomToRect:zoomArea animated:YES];
+    
     [gameEngine didWin:didWin];
+    
+    zoomed = TRUE;
 }
 
 - (void)resetZoom 
 {    
+    [polygonView clearPolygons];
+    self.winFailLabel.text = @"";
+    
     if (gameEngine.gameFinished) 
     {
         [gameEngine reset];
@@ -204,6 +219,7 @@
     [badgerScrollView release];
     [navigationBar release];
     [toolBar release];
+    [_winFailLabel release];
     [super dealloc];
 }
 
@@ -228,13 +244,18 @@
     navigationBar.tintColor = [UIColor navigationGreenColor];
     toolBar.tintColor = [UIColor navigationGreenColor];
     attemptsLabel.text = gameEngine.attemptsText;
-    
     self.currentBadger = [self.badgers objectAtIndex:0];
+    
+    PolygonView *thepolygonView = [[PolygonView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
+    [self.badgerImageView addSubview:thepolygonView];
+    self.polygonView = thepolygonView;
+    [thepolygonView release];
 }
 
 
 - (void)viewDidUnload
 {
+    [self setWinFailLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

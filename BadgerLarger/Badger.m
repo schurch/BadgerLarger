@@ -65,7 +65,6 @@ const int POINT_ARRAY_SIZE = 10;
         Badger *badger = [[Badger alloc] initWithPolygon:parsedCoords badgerImagePath:imageFilePath badgerThumbPath:thumbFilePath];
         [badgers addObject:badger];
         [badger release];
-        
     }
     
     return [badgers autorelease];

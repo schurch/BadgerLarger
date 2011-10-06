@@ -15,43 +15,32 @@
 + (gpc_polygon *)generateGpcPoly:(NSArray *)vertices
 {    
     int vertexCount = (int)[vertices count];
-    
-    gpc_vertex *vertexList;
-    gpc_vertex *vertexListStepper;
 
-    vertexList = (gpc_vertex *)malloc(sizeof(gpc_vertex) * vertexCount);
-    vertexListStepper = vertexList;
+    gpc_vertex *vertexList = malloc(sizeof(gpc_vertex) * vertexCount);
     
     for (int i = 0; i < vertexCount; i++) 
     {
         Vertex *vertex = [vertices objectAtIndex:i];
         
-        gpc_vertex *gpcVertex;
-        gpcVertex = (gpc_vertex *)malloc(sizeof(gpc_vertex));
-        gpcVertex -> x = vertex.x;
-        gpcVertex -> y = vertex.y;
+        gpc_vertex gpcVertex;
+        gpcVertex.x = vertex.x;
+        gpcVertex.y = vertex.y;
         
-        *vertexListStepper = *gpcVertex;
-        vertexListStepper++;
+        vertexList[i] = gpcVertex;
     }
     
-    gpc_vertex_list *currentPolyVertexList;
-    currentPolyVertexList = (gpc_vertex_list *)malloc(sizeof(gpc_vertex_list));
+    gpc_vertex_list *currentPolyVertexList = malloc(sizeof(gpc_vertex_list));
     currentPolyVertexList -> num_vertices = vertexCount;
     currentPolyVertexList -> vertex = vertexList;
+
     
-    gpc_vertex_list *vertexListArray;
-    vertexListArray = (gpc_vertex_list *)malloc(sizeof(gpc_vertex_list));
-    vertexListArray = currentPolyVertexList;
+    gpc_polygon *gpcPolygon = malloc(sizeof(gpc_polygon));
     
-    gpc_polygon *polygon;
-    polygon = (gpc_polygon *)malloc(sizeof(gpc_polygon));
+    gpcPolygon -> hole = NULL;
+    gpcPolygon -> num_contours = 1;
+    gpcPolygon -> contour = currentPolyVertexList;
     
-    polygon -> hole = NULL;
-    polygon -> num_contours = 1;
-    polygon -> contour = vertexListArray;
-    
-    return polygon;
+    return gpcPolygon;
 }
 
 @synthesize vertices = _vertices;
@@ -94,14 +83,14 @@
 - (BOOL)doesIntersect:(Polygon *)polygon
 {
     bool returnValue;
+
+    gpc_polygon *currentPolygon = [Polygon generateGpcPoly:self.vertices];
+    gpc_polygon *otherPolygon = [Polygon generateGpcPoly:polygon.vertices];
     
-    gpc_polygon currentPolygon = *[Polygon generateGpcPoly:self.vertices];
-    gpc_polygon otherPolygon = *[Polygon generateGpcPoly:polygon.vertices];
+    gpc_polygon *intersectPolygon = malloc(sizeof(gpc_polygon));
+    gpc_polygon_clip(GPC_INT, currentPolygon, otherPolygon, intersectPolygon);
     
-    gpc_polygon intersectPolygon;
-    gpc_polygon_clip(GPC_INT, &currentPolygon, &otherPolygon, &intersectPolygon);
-    
-    if (intersectPolygon.num_contours == 0) 
+    if (intersectPolygon -> num_contours == 0) 
     {
         returnValue = FALSE;   
     }
@@ -110,9 +99,13 @@
         returnValue = TRUE;
     }
     
-    gpc_free_polygon(&currentPolygon);
-    gpc_free_polygon(&otherPolygon);
-    gpc_free_polygon(&intersectPolygon);
+    gpc_free_polygon(currentPolygon);
+    gpc_free_polygon(otherPolygon);
+    gpc_free_polygon(intersectPolygon);
+    
+    free(currentPolygon);
+    free(otherPolygon);
+    free(intersectPolygon);
     
     return returnValue;
 }
