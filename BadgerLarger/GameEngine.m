@@ -9,8 +9,7 @@
 #import "GameEngine.h"
 
 #define MAX_ATTEMPTS 5
-#define SCORE_TEXT "%d"
-#define ATTEMPTS_TEXT "%d/%d"
+#define SCORE_TEXT "%d of %d"
 
 @implementation GameEngine
 
@@ -30,12 +29,7 @@
 
 - (NSString *)scoreText
 {
-    return [NSString stringWithFormat:@SCORE_TEXT, score];
-}
-
-- (NSString *)attemptsText
-{
-    return [NSString stringWithFormat:@ATTEMPTS_TEXT, attempts, MAX_ATTEMPTS];
+    return [NSString stringWithFormat:@SCORE_TEXT, score, MAX_ATTEMPTS];
 }
 
 - (id)init

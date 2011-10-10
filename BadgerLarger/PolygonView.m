@@ -44,28 +44,25 @@
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef contextRef = UIGraphicsGetCurrentContext();
-    
-//    if([self.polygons count] > 0){
-        int fillColorIndex = 0;
-        for (Polygon *polygon in self.polygons) {
-            CGContextBeginPath(contextRef);
-            
-            Vertex *firstVertex = (Vertex *)[polygon.vertices objectAtIndex:0];
-            CGContextMoveToPoint(contextRef, firstVertex.x, firstVertex.y);
-            
-            for (int i = 1; i < [polygon.vertices count]; i++) {
-                Vertex *vertex = (Vertex *)[polygon.vertices objectAtIndex:i];
-                CGContextAddLineToPoint(contextRef, vertex.x, vertex.y);
-            }
-            
-            CGContextClosePath(contextRef);
-            UIColor *fillColor = [[PolygonView colors] objectAtIndex:(fillColorIndex % [[PolygonView colors] count])];
-            [fillColor set];
-            CGContextDrawPath(contextRef, kCGPathFill);
-            
-            fillColorIndex++;
+    int fillColorIndex = 0;
+    for (Polygon *polygon in self.polygons) {
+        CGContextBeginPath(contextRef);
+        
+        Vertex *firstVertex = (Vertex *)[polygon.vertices objectAtIndex:0];
+        CGContextMoveToPoint(contextRef, firstVertex.x, firstVertex.y);
+        
+        for (int i = 1; i < [polygon.vertices count]; i++) {
+            Vertex *vertex = (Vertex *)[polygon.vertices objectAtIndex:i];
+            CGContextAddLineToPoint(contextRef, vertex.x, vertex.y);
         }
-//    }
+        
+        CGContextClosePath(contextRef);
+        UIColor *fillColor = [[PolygonView colors] objectAtIndex:(fillColorIndex % [[PolygonView colors] count])];
+        [fillColor set];
+        CGContextDrawPath(contextRef, kCGPathFill);
+        
+        fillColorIndex++;
+    }
 }
 
 - (void)dealloc {

@@ -13,11 +13,12 @@
 #import "Polygon.h"
 
 #define WIN_TEXT @"WIN"
-#define FAIL_TEXT @"FAIL"
+#define FAIL_TEXT @"LOSE"
 
 @implementation BadgerLargerViewController
 
-@synthesize polygonView;
+@synthesize polygonView = _polygonView;
+@synthesize largerButton = _largerButton;
 @synthesize winFailLabel = _winFailLabel;
 @synthesize winLabelText;
 @synthesize currentBadger;
@@ -28,7 +29,6 @@
 @synthesize winLabel;
 @synthesize scoreLabel;
 @synthesize finalScoreLabel;
-@synthesize attemptsLabel;
 @synthesize badgerImageView;
 @synthesize badgerScrollView;
 @synthesize navigationBar;
@@ -73,6 +73,10 @@
 
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale
 {    
+    if(scale == 1){
+        return;
+    }
+    
     switch (gameEngine.gameStatus) {
         case GameEngineFinished:
             winLabelText = FAIL_TEXT;
@@ -95,122 +99,61 @@
         default:
             break;
     }
-    
-    self.attemptsLabel.text = gameEngine.attemptsText;
 }
 
 - (void)showWinFailScreen
 {
-    if(!self.winFailView)
-    {
-        [[NSBundle mainBundle] loadNibNamed:@"WinFailView" owner:self options:nil];
-        winFailView.frame = CGRectMake(0, 75, winFailView.frame.size.width, winFailView.frame.size.height);  
-        winLabel.text = winLabelText;
-        [self.view addSubview:winFailView];
-    }
-    else
-    {
-        winLabel.text = winLabelText;
-        winFailView.hidden = FALSE;
-    }
-    
-    [self shrinkanimate];
-}
-
-- (void)showGameOverScreen 
-{
-    if(!self.gameOverView)
-    {
-        [[NSBundle mainBundle] loadNibNamed:@"GameOverView" owner:self options:nil];
-        gameOverView.frame = CGRectMake(0, 75, gameOverView.frame.size.width, gameOverView.frame.size.height);  
-        [self.view addSubview:gameOverView];
-    }
-    
-    winFailView.hidden = TRUE;    
-    gameOverView.hidden = FALSE;
-    finalScoreLabel.text = gameEngine.scoreText;
-}
-
-- (void)shrinkanimate
-{
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.2];
-    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-    [UIView setAnimationDelegate:self];
-    [UIView setAnimationDidStopSelector:@selector(growanimate)];
-    winLabel.transform = CGAffineTransformMakeScale(0.5f, 0.5f);
-    [UIView commitAnimations];
-}
-
-- (void)growanimate
-{
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.2];
-    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
-    
-    if (gameEngine.gameFinished) 
-    {
-        [UIView setAnimationDelegate:self];
-        [UIView setAnimationDidStopSelector:@selector(showGameOverScreen)];
-    }
-
-    winLabel.transform = CGAffineTransformMakeScale(1.0f, 1.0f);
-    [UIView commitAnimations];
-}
-
-- (IBAction)unlargerAction:(id)sender 
-{
-    [self resetZoom];
+    self.winFailLabel.text = winLabelText;
+    self.winFailLabel.hidden = NO;
 }
 
 - (IBAction)largerAction:(id)sender 
-{        
-    if (zoomed) 
-    {
-        return;
-    }
+{
+    NSLog(@"largerAction called.");    
+    self.largerButton.enabled = NO;
     
     CGRect zoomArea = [RectangleUtils randomZoomAreaInRect:badgerScrollView.frame maxZoom:badgerScrollView.maximumZoomScale];
 
     Polygon *zoomPolygon = [[Polygon alloc] initWithRect:zoomArea];
     Polygon *badgerPolygon = [[Polygon alloc] initWithVertices:currentBadger.badgerOutlinePolygon];
-    
-    NSArray *polygons = [[NSArray alloc] initWithObjects:badgerPolygon, zoomPolygon, nil];
-    
-    [polygonView drawPolygons:polygons];
-    
-    didWin = [zoomPolygon doesIntersect:badgerPolygon];
-    self.winFailLabel.text = didWin ? @"WIN" : @"FAIL";
 
+    didWin = [zoomPolygon doesIntersect:badgerPolygon];
+    
+#ifdef DEBUG
+    NSArray *polygons = [[NSArray alloc] initWithObjects:badgerPolygon, zoomPolygon, nil];
+    [self.polygonView drawPolygons:polygons];
+    [polygons release];
+    self.winFailLabel.text = didWin ? WIN_TEXT :FAIL_TEXT;
+#endif
+    
     [zoomPolygon release];
     [badgerPolygon release];
-    
-//    [badgerScrollView zoomToRect:zoomArea animated:YES];
+
+#ifndef DEBUG
+    [badgerScrollView zoomToRect:zoomArea animated:YES];
+#endif
     
     [gameEngine didWin:didWin];
-    
-    zoomed = TRUE;
+    [self performSelector:@selector(resetZoom) withObject:nil afterDelay:2];
 }
 
 - (void)resetZoom 
-{    
-    [polygonView clearPolygons];
+{        
+#ifdef DEBUG
+    [self.polygonView clearPolygons];
     self.winFailLabel.text = @"";
+#endif
+
+    self.winFailLabel.hidden = YES;
     
     if (gameEngine.gameFinished) 
     {
         [gameEngine reset];
         self.scoreLabel.text = gameEngine.scoreText;
-        self.attemptsLabel.text = gameEngine.attemptsText;
-        gameOverView.hidden = TRUE;
-    }
-    else
-    {
-        winFailView.hidden = TRUE;
     }
     
-    [badgerScrollView setZoomScale:1.0 animated:NO];
-    zoomed = FALSE;
+    [badgerScrollView setZoomScale:1.0 animated:YES];
+    self.largerButton.enabled = YES;
 }
 
 - (void)dealloc
@@ -220,6 +163,7 @@
     [navigationBar release];
     [toolBar release];
     [_winFailLabel release];
+    [_largerButton release];
     [super dealloc];
 }
 
@@ -233,8 +177,6 @@
 
 #pragma mark - View lifecycle
 
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -243,27 +185,39 @@
     
     navigationBar.tintColor = [UIColor navigationGreenColor];
     toolBar.tintColor = [UIColor navigationGreenColor];
-    attemptsLabel.text = gameEngine.attemptsText;
     self.currentBadger = [self.badgers objectAtIndex:0];
     
-    PolygonView *thepolygonView = [[PolygonView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
-    [self.badgerImageView addSubview:thepolygonView];
-    self.polygonView = thepolygonView;
-    [thepolygonView release];
+    WinFailLabel *winFailLabel = [[WinFailLabel alloc] initWithFrame:CGRectMake(66, 167, 200, 73)];
+    winFailLabel.backgroundColor = [UIColor clearColor];
+    winFailLabel.textColor = [UIColor whiteColor];
+    winFailLabel.highlightedTextColor = [UIColor blackColor];
+    winFailLabel.textAlignment =  UITextAlignmentCenter;
+    winFailLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:(90.0)];
+    winFailLabel.text = @"";
+    winFailLabel.hidden = YES;
+    self.winFailLabel = winFailLabel;
+    [self.view addSubview:winFailLabel];
+    [winFailLabel release];
+    
+    
+#ifdef DEBUG
+    PolygonView *polygonView = [[PolygonView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
+    [self.badgerImageView addSubview:polygonView];
+    self.polygonView = polygonView;
+    [polygonView release];
+#endif
 }
 
 
 - (void)viewDidUnload
 {
     [self setWinFailLabel:nil];
+    [self setLargerButton:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 

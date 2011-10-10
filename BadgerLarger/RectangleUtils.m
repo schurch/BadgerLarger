@@ -3,7 +3,7 @@
 //  BadgerLarger
 //
 //  Created by Stefan Church on 09/09/2011.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Stefan Church. All rights reserved.
 //
 
 #import "RectangleUtils.h"

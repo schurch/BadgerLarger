@@ -48,7 +48,6 @@
 						<string key="NSFrame">{{67, 95}, {186, 152}}</string>
 						<reference key="NSSuperview" ref="826864792"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -61,15 +60,18 @@
 							<int key="NSfFlags">16</int>
 						</object>
 						<object class="NSColor" key="IBUITextColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC41MDE5NjA4MTQgMSAwAA</bytes>
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MQA</bytes>
 						</object>
-						<nil key="IBUIHighlightedColor"/>
+						<object class="NSColor" key="IBUIHighlightedColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MCAwIDAAA</bytes>
+						</object>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
 					</object>
 				</object>
-				<string key="NSFrameSize">{320, 341}</string>
+				<string key="NSFrameSize">{320, 387}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="200159691"/>
@@ -77,7 +79,6 @@
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MAA</bytes>
 				</object>
-				<float key="IBUIAlpha">0.5</float>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 		</object>
@@ -86,19 +87,19 @@
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">winFailView</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="826864792"/>
-					</object>
-					<int key="connectionID">7</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">winLabel</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="200159691"/>
 					</object>
 					<int key="connectionID">8</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">winFailView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="826864792"/>
+					</object>
+					<int key="connectionID">9</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -166,7 +167,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">8</int>
+			<int key="maxID">9</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -180,11 +181,9 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>largerAction:</string>
 							<string>showBadgerChooser:</string>
-							<string>unlargerAction:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>
@@ -195,7 +194,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>largerAction:</string>
 							<string>showBadgerChooser:</string>
-							<string>unlargerAction:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -207,37 +205,33 @@
 								<string key="name">showBadgerChooser:</string>
 								<string key="candidateClassName">id</string>
 							</object>
-							<object class="IBActionInfo">
-								<string key="name">unlargerAction:</string>
-								<string key="candidateClassName">id</string>
-							</object>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>attemptsLabel</string>
 							<string>badgerImageView</string>
 							<string>badgerScrollView</string>
 							<string>finalScoreLabel</string>
-							<string>gameOverView</string>
+							<string>largerButton</string>
 							<string>navigationBar</string>
 							<string>scoreLabel</string>
 							<string>toolBar</string>
+							<string>winFailLabel</string>
 							<string>winFailView</string>
 							<string>winLabel</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>UILabel</string>
 							<string>UIImageView</string>
 							<string>UIScrollView</string>
 							<string>UILabel</string>
-							<string>UIView</string>
+							<string>UIButton</string>
 							<string>UINavigationBar</string>
 							<string>UILabel</string>
 							<string>UIToolbar</string>
+							<string>UILabel</string>
 							<string>UIView</string>
 							<string>UILabel</string>
 						</object>
@@ -246,23 +240,19 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>attemptsLabel</string>
 							<string>badgerImageView</string>
 							<string>badgerScrollView</string>
 							<string>finalScoreLabel</string>
-							<string>gameOverView</string>
+							<string>largerButton</string>
 							<string>navigationBar</string>
 							<string>scoreLabel</string>
 							<string>toolBar</string>
+							<string>winFailLabel</string>
 							<string>winFailView</string>
 							<string>winLabel</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBToOneOutletInfo">
-								<string key="name">attemptsLabel</string>
-								<string key="candidateClassName">UILabel</string>
-							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">badgerImageView</string>
 								<string key="candidateClassName">UIImageView</string>
@@ -276,8 +266,8 @@
 								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
-								<string key="name">gameOverView</string>
-								<string key="candidateClassName">UIView</string>
+								<string key="name">largerButton</string>
+								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">navigationBar</string>
@@ -290,6 +280,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">toolBar</string>
 								<string key="candidateClassName">UIToolbar</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">winFailLabel</string>
+								<string key="candidateClassName">UILabel</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">winFailView</string>
