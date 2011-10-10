@@ -15,9 +15,7 @@
 		FD360D231418DC530025EFC7 /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD360D211418DC530025EFC7 /* CreditsViewController.m */; };
 		FD360D241418DC530025EFC7 /* CreditsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD360D221418DC530025EFC7 /* CreditsView.xib */; };
 		FD504380141E5BDC007955EE /* gpc.c in Sources */ = {isa = PBXBuildFile; fileRef = FD50437E141E5BDC007955EE /* gpc.c */; };
-		FD768FC0141CE1CC00A38D9D /* WinFailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD768FBF141CE1CC00A38D9D /* WinFailView.xib */; };
 		FD7E966614423A2A00B30748 /* WinFailLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7E966514423A2A00B30748 /* WinFailLabel.m */; };
-		FD7E966B1442542D00B30748 /* larger_icon_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7E966A1442542D00B30748 /* larger_icon_1.png */; };
 		FD7EC318141E3A550037AE05 /* Vertex.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7EC317141E3A550037AE05 /* Vertex.m */; };
 		FD9C9FFB141D05EE00B414AE /* Badger.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C9FFA141D05EE00B414AE /* Badger.m */; };
 		FD9CA007141D188100B414AE /* BadgerSettings.cfg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FD9C9FED141D01B200B414AE /* BadgerSettings.cfg */; };
@@ -73,7 +71,8 @@
 		FDE706851413C1170032ACD0 /* ChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE706831413C1170032ACD0 /* ChooserViewController.m */; };
 		FDE706861413C1170032ACD0 /* ChooserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE706841413C1170032ACD0 /* ChooserView.xib */; };
 		FDE70695141424540032ACD0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE70694141424540032ACD0 /* QuartzCore.framework */; };
-		FDF03377141AC2E4002097E8 /* GameOverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDF03376141AC2E4002097E8 /* GameOverView.xib */; };
+		FDFC6D7614429759007F146A /* magnifying_bager.png in Resources */ = {isa = PBXBuildFile; fileRef = FDFC6D7514429759007F146A /* magnifying_bager.png */; };
+		FDFC6D78144297C4007F146A /* magnifying_badger.png in Resources */ = {isa = PBXBuildFile; fileRef = FDFC6D77144297C4007F146A /* magnifying_badger.png */; };
 		FDFE51E5141A1F350067DDB5 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFE51E4141A1F350067DDB5 /* UIColor+CustomColors.m */; };
 		FDFE51E9141A43E30067DDB5 /* RectangleUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFE51E8141A43E30067DDB5 /* RectangleUtils.m */; };
 /* End PBXBuildFile section */
@@ -140,10 +139,8 @@
 		FD360D221418DC530025EFC7 /* CreditsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditsView.xib; sourceTree = "<group>"; };
 		FD50437E141E5BDC007955EE /* gpc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gpc.c; path = "../../../../Downloads/gpc232-release/gpc.c"; sourceTree = "<group>"; };
 		FD50437F141E5BDC007955EE /* gpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gpc.h; path = "../../../../Downloads/gpc232-release/gpc.h"; sourceTree = "<group>"; };
-		FD768FBF141CE1CC00A38D9D /* WinFailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WinFailView.xib; sourceTree = "<group>"; };
 		FD7E966414423A2A00B30748 /* WinFailLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinFailLabel.h; sourceTree = "<group>"; };
 		FD7E966514423A2A00B30748 /* WinFailLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinFailLabel.m; sourceTree = "<group>"; };
-		FD7E966A1442542D00B30748 /* larger_icon_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = larger_icon_1.png; path = ../../../../Desktop/larger_icon_1.png; sourceTree = "<group>"; };
 		FD7EC316141E3A550037AE05 /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
 		FD7EC317141E3A550037AE05 /* Vertex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vertex.m; sourceTree = "<group>"; };
 		FD9C9FED141D01B200B414AE /* BadgerSettings.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BadgerSettings.cfg; sourceTree = "<group>"; };
@@ -192,7 +189,8 @@
 		FDE706831413C1170032ACD0 /* ChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooserViewController.m; sourceTree = "<group>"; };
 		FDE706841413C1170032ACD0 /* ChooserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooserView.xib; sourceTree = "<group>"; };
 		FDE70694141424540032ACD0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		FDF03376141AC2E4002097E8 /* GameOverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOverView.xib; sourceTree = "<group>"; };
+		FDFC6D7514429759007F146A /* magnifying_bager.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = magnifying_bager.png; path = ../../../../Desktop/magnifying_bager.png; sourceTree = "<group>"; };
+		FDFC6D77144297C4007F146A /* magnifying_badger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = magnifying_badger.png; path = ../../../../Desktop/magnifying_badger.png; sourceTree = "<group>"; };
 		FDFE51E3141A1F350067DDB5 /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
 		FDFE51E4141A1F350067DDB5 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
 		FDFE51E7141A43E20067DDB5 /* RectangleUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectangleUtils.h; sourceTree = "<group>"; };
@@ -320,9 +318,7 @@
 				FDE706541413BEF60032ACD0 /* MainWindow.xib */,
 				FD360D221418DC530025EFC7 /* CreditsView.xib */,
 				FDE7065A1413BEF60032ACD0 /* BadgerLargerView.xib */,
-				FD768FBF141CE1CC00A38D9D /* WinFailView.xib */,
 				FDE706841413C1170032ACD0 /* ChooserView.xib */,
-				FDF03376141AC2E4002097E8 /* GameOverView.xib */,
 				FDE706491413BEF60032ACD0 /* Supporting Files */,
 			);
 			path = BadgerLarger;
@@ -331,7 +327,8 @@
 		FDE706491413BEF60032ACD0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FD7E966A1442542D00B30748 /* larger_icon_1.png */,
+				FDFC6D77144297C4007F146A /* magnifying_badger.png */,
+				FDFC6D7514429759007F146A /* magnifying_bager.png */,
 				FD1709591418D0F0000A9BA1 /* badger_icon.png */,
 				FDBFBC7C14183D9600815898 /* magnifying-glass-zoom.png */,
 				FD0C207E1414392300F3A1BE /* icon_settings 20.png */,
@@ -457,9 +454,8 @@
 				FDBFBC7D14183D9600815898 /* magnifying-glass-zoom.png in Resources */,
 				FD17095A1418D0F0000A9BA1 /* badger_icon.png in Resources */,
 				FD360D241418DC530025EFC7 /* CreditsView.xib in Resources */,
-				FDF03377141AC2E4002097E8 /* GameOverView.xib in Resources */,
-				FD768FC0141CE1CC00A38D9D /* WinFailView.xib in Resources */,
-				FD7E966B1442542D00B30748 /* larger_icon_1.png in Resources */,
+				FDFC6D7614429759007F146A /* magnifying_bager.png in Resources */,
+				FDFC6D78144297C4007F146A /* magnifying_badger.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

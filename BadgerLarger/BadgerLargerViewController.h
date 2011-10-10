@@ -33,10 +33,10 @@
     UINavigationBar *navigationBar;
     UIToolbar *toolBar;
     WinFailLabel *_winFailLabel;
-    UIButton *_largerButton;
+    UIBarButtonItem *_largerButton;
 }
 
-@property (nonatomic, retain) IBOutlet UIButton *largerButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *largerButton;
 @property (nonatomic, retain) WinFailLabel *winFailLabel;
 @property (nonatomic, retain) NSString *winLabelText;
 @property (nonatomic, retain) IBOutlet UIView *winFailView;

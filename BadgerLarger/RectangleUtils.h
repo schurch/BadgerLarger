@@ -15,6 +15,5 @@
 
 + (CGRect)randomZoomAreaInRect:(CGRect)rect maxZoom:(float)zoom;
 + (CGRect)zoomAreaForOrginalRect:(CGRect)rect withScale:(float)scale withCenter:(CGPoint)center;
-+ (BOOL)doesRectIntersect:(CGRect)rectA rectB:(CGRect)rectB;
 
 @end

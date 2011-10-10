@@ -8,7 +8,6 @@
 
 #import "RectangleUtils.h"
 
-
 @implementation RectangleUtils
 
 + (CGRect)randomZoomAreaInRect:(CGRect)rect maxZoom:(float)zoom 
@@ -38,30 +37,31 @@
     zoomRect.origin.x = center.x - (zoomRect.size.width  / 2.0);
     zoomRect.origin.y = center.y - (zoomRect.size.height / 2.0);
     
+    if(zoomRect.origin.x < 0) {
+        NSLog(@"Zoom rect orgin.x < 0");
+        zoomRect.origin.x = 0;
+        NSLog(@"Zoom rect orgin.x = 0");
+    }
+    
+    if((zoomRect.origin.x + zoomRect.size.width) > rect.size.width) {
+        NSLog(@"Zoom rect orgin.x + width > %f", rect.size.width);
+        zoomRect.origin.x = rect.size.width - zoomRect.size.width;
+        NSLog(@"Zoom rect orgin.x = %f", zoomRect.origin.x);
+    }
+    
+    if(zoomRect.origin.y < 0) {
+        NSLog(@"Zoom rect orgin.y < 0");
+        zoomRect.origin.y = 0;
+        NSLog(@"Zoom rect orgin.y = 0");
+    }
+    
+    if((zoomRect.origin.y + zoomRect.size.height) > rect.size.height) {
+        NSLog(@"Zoom rect orgin.y + height > %f", rect.size.height);
+        zoomRect.origin.y = rect.size.height - zoomRect.size.height;
+        NSLog(@"Zoom rect orgin.y = %f", zoomRect.origin.y);
+    }
+    
     return zoomRect;
-}
-
-+ (BOOL)doesRectIntersect:(CGRect)rectA rectB:(CGRect)rectB 
-{
-    float rectAx1 = rectA.origin.x;
-    float rectAx2 = rectA.origin.x + rectA.size.width;
-    float rectBx1 = rectB.origin.x;
-    float rectBx2 = rectB.origin.x + rectB.size.width;
-    
-    float rectAy1 = rectA.origin.y;
-    float rectAy2 = rectA.origin.y + rectA.size.height;
-    float rectBy1 = rectB.origin.y;
-    float rectBy2 = rectB.origin.y + rectB.size.height;
-    
-    if (rectAx1 < rectBx2 && rectAx2 > rectBx1 &&
-        rectAy1 < rectBy2 && rectAy2 > rectBy1)
-    {
-        return TRUE;
-    }
-    else
-    {
-        return FALSE;
-    }
 }
 
 @end

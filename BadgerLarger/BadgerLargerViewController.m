@@ -13,7 +13,7 @@
 #import "Polygon.h"
 
 #define WIN_TEXT @"WIN"
-#define FAIL_TEXT @"LOSE"
+#define FAIL_TEXT @"FAIL"
 
 @implementation BadgerLargerViewController
 
@@ -187,12 +187,17 @@
     toolBar.tintColor = [UIColor navigationGreenColor];
     self.currentBadger = [self.badgers objectAtIndex:0];
     
-    WinFailLabel *winFailLabel = [[WinFailLabel alloc] initWithFrame:CGRectMake(66, 167, 200, 73)];
+    CGFloat labelHeight = 100;
+    CGFloat labelWidth = 250;
+    CGFloat labelX = (self.view.frame.size.width / 2) - (labelWidth / 2);
+    CGFloat labelY = (self.view.frame.size.height / 2) - (labelHeight / 2);
+    WinFailLabel *winFailLabel = [[WinFailLabel alloc] initWithFrame:CGRectMake(labelX, labelY, labelWidth, labelHeight)];
     winFailLabel.backgroundColor = [UIColor clearColor];
     winFailLabel.textColor = [UIColor whiteColor];
     winFailLabel.highlightedTextColor = [UIColor blackColor];
     winFailLabel.textAlignment =  UITextAlignmentCenter;
-    winFailLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:(90.0)];
+    winFailLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:(80.0)];
+    winFailLabel.adjustsFontSizeToFitWidth = YES;
     winFailLabel.text = @"";
     winFailLabel.hidden = YES;
     self.winFailLabel = winFailLabel;
