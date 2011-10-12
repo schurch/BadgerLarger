@@ -1,0 +1,53 @@
+* Badger Larger todo list
+** DONE Disable badger zooming with pinch
+   CLOSED: [2011-09-07 Wed 00:44]
+** DONE Load images from bundle automatically
+   CLOSED: [2011-09-07 Wed 11:57]
+** DONE Replace magic numbers with constants
+   CLOSED: [2011-09-07 Wed 12:29]
+** DONE Proper thumbnail images
+   CLOSED: [2011-09-07 Wed 17:25]
+** DONE Scrollable badger thumbnails
+   CLOSED: [2011-09-07 Wed 14:45]
+** DONE Find royalty free badger images
+   CLOSED: [2011-09-08 Thu 00:26]
+** DONE Resize/crop images
+   CLOSED: [2011-09-08 Thu 00:39]
+** DONE Credits view
+   CLOSED: [2011-09-08 Thu 15:16]
+** DONE Improved Zoom/Reset images
+   CLOSED: [2011-09-08 Thu 01:04]
+** DONE Custom app icon
+   CLOSED: [2011-09-08 Thu 11:31]
+** DONE Check for memory leaks
+   CLOSED: [2011-10-12 Wed 05:02]
+** DONE Final cleanup of
+   CLOSED: [2011-10-12 Wed 05:02]
+** TODO Screenshots for App Store
+** TODO Icons for App Store
+** TODO Text for App Store
+** TODO Put on GitHub
+** DONE Proper game over logic (show WIN/FAIL, then game over screen)
+   CLOSED: [2011-09-11 Sun 15:41]
+** DONE Load badger images and coords from config file
+   CLOSED: [2011-09-12 Mon 15:54]
+*** DONE Load all information into badger class
+    CLOSED: [2011-09-12 Mon 15:54]
+** DONE Update to use polygons to outline badger image
+   CLOSED: [2011-10-09 Sun 16:42]
+*** DONE New intersection algorithm to determine if polygon overlap
+    CLOSED: [2011-10-09 Sun 16:41]
+** DONE Finish implementing debug mode
+   CLOSED: [2011-10-09 Sun 17:24]
+** DONE Accurate badger polygons
+   CLOSED: [2011-10-12 Wed 05:02]
+** DONE Improved zoom button
+   CLOSED: [2011-10-12 Wed 05:03]
+** DONE Remove reset button
+   CLOSED: [2011-10-12 Wed 05:03]
+** DONE Automatically reset view 
+   CLOSED: [2011-10-12 Wed 05:03]
+** DONE Improved WIN/FAIL views
+   CLOSED: [2011-10-12 Wed 05:03]
+** DONE Fix zoom on screen edge
+   CLOSED: [2011-10-12 Wed 05:03]

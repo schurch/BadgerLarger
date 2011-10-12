@@ -20,13 +20,12 @@ typedef enum {
     BOOL gameFinished;
     int attempts;
     int score;
-    NSString *scoreText;
     GameEngineState gameStatus;
 }
 
 @property (readonly) BOOL gameFinished;
-@property (nonatomic, readonly) NSString *scoreText;
 @property (nonatomic) GameEngineState gameStatus;
+@property (nonatomic, readonly) NSString *scoreText;
 
 - (id)init;
 - (void)didWin:(BOOL)didWin;

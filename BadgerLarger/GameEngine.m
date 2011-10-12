@@ -15,6 +15,20 @@
 
 @synthesize gameStatus;
 
+- (id)init
+{
+    self = [super init];
+    
+    if (self) 
+    {
+        attempts = 0;
+        score = 0;
+        self.gameStatus = GameEngineNotStarted;
+    }
+    
+    return self;
+}
+
 - (BOOL)gameFinished
 {
     if((self.gameStatus == GameEngineFinished) || (self.gameStatus == GameEngineWonAndFinished))
@@ -30,20 +44,6 @@
 - (NSString *)scoreText
 {
     return [NSString stringWithFormat:@SCORE_TEXT, score, MAX_ATTEMPTS];
-}
-
-- (id)init
-{
-    self = [super init];
-    
-    if (self) 
-    {
-        attempts = 0;
-        score = 0;
-        self.gameStatus = GameEngineNotStarted;
-    }
-    
-    return self;
 }
 
 
