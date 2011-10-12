@@ -38,27 +38,19 @@
     zoomRect.origin.y = center.y - (zoomRect.size.height / 2.0);
     
     if(zoomRect.origin.x < 0) {
-        NSLog(@"Zoom rect orgin.x < 0");
         zoomRect.origin.x = 0;
-        NSLog(@"Zoom rect orgin.x = 0");
     }
     
     if((zoomRect.origin.x + zoomRect.size.width) > rect.size.width) {
-        NSLog(@"Zoom rect orgin.x + width > %f", rect.size.width);
         zoomRect.origin.x = rect.size.width - zoomRect.size.width;
-        NSLog(@"Zoom rect orgin.x = %f", zoomRect.origin.x);
     }
     
     if(zoomRect.origin.y < 0) {
-        NSLog(@"Zoom rect orgin.y < 0");
         zoomRect.origin.y = 0;
-        NSLog(@"Zoom rect orgin.y = 0");
     }
     
     if((zoomRect.origin.y + zoomRect.size.height) > rect.size.height) {
-        NSLog(@"Zoom rect orgin.y + height > %f", rect.size.height);
         zoomRect.origin.y = rect.size.height - zoomRect.size.height;
-        NSLog(@"Zoom rect orgin.y = %f", zoomRect.origin.y);
     }
     
     return zoomRect;

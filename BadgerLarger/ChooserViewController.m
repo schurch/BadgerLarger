@@ -17,8 +17,8 @@
 
 @implementation ChooserViewController
 
-@synthesize badgers;
-@synthesize scrollView;
+@synthesize badgers = _badgers;
+@synthesize scrollView = _scrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +32,6 @@
     
     }
     return self;
-    
 }
 
 - (id)delegate 
@@ -85,7 +84,7 @@
     for (ChooserButton *badgerButton in badgerButtons) {
         [badgerButton setFrame:CGRectMake(x, y, THUMBNAIL_SIZE, THUMBNAIL_SIZE)];
         [badgerButton addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
-        [scrollView addSubview:badgerButton];
+        [self.scrollView addSubview:badgerButton];
         
         x+= THUMBNAIL_SIZE + THUMBNAIL_MARGIN;
         
@@ -102,16 +101,14 @@
 
 - (void)dealloc
 {
-    [scrollView release];
+    [_scrollView release];
+    
     [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning
 {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
@@ -133,7 +130,7 @@
     
     CGFloat scrollViewHeight = (badgerButtonRows * THUMBNAIL_SIZE) + (badgerButtonRows * THUMBNAIL_MARGIN) + THUMBNAIL_MARGIN;
     
-    scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, scrollViewHeight); 
+    self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, scrollViewHeight); 
     
     [badgerButtons release];
 }
@@ -141,13 +138,10 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 

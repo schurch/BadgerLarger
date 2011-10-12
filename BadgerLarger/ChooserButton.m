@@ -33,6 +33,7 @@
 - (void)dealloc
 {
     [_badger release];
+    
     [super dealloc];
 }
 

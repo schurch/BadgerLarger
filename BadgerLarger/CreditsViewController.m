@@ -3,7 +3,7 @@
 //  BadgerLarger
 //
 //  Created by Stefan Church on 08/09/2011.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Stefan Church. All rights reserved.
 //
 
 #import "CreditsViewController.h"
@@ -12,23 +12,16 @@
 
 @implementation CreditsViewController
 
-@synthesize navigationBar;
+@synthesize navigationBar = _navigationBar;
 
-- (id)delegate {
+- (id)delegate 
+{
     return delegate;
 }
 
-- (void)setDelegate:(id)newDelegate {
-    delegate = newDelegate;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)setDelegate:(id)newDelegate 
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    delegate = newDelegate;
 }
 
 - (IBAction)done:(id)sender 
@@ -40,16 +33,14 @@
 
 - (void)dealloc
 {
-    [navigationBar release];
+    [_navigationBar release];
+    
     [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning
 {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
@@ -57,21 +48,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    navigationBar.tintColor = [UIColor navigationGreenColor];
+    self.navigationBar.tintColor = [UIColor navigationGreenColor];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 

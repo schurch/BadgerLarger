@@ -14,13 +14,12 @@
     NSArray *_vertices;
 }
 
-+ (gpc_polygon *)generateGpcPoly:(NSArray *)vertices;
-
 @property (nonatomic, readonly) NSArray *vertices;
 
 - (id)initWithRect:(CGRect)zoomArea;
 - (id)initWithVertices:(NSArray *)vertices;
 - (BOOL)doesIntersect:(Polygon *)polygon;
 
++ (gpc_polygon *)generateGpcPoly:(NSArray *)vertices;
 
 @end

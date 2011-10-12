@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "ChooserViewController.h"
-#import "GameEngine.h"
 #import "Badger.h"
 #import "Polygon.h"
 #import "PolygonView.h"
@@ -16,46 +15,31 @@
 
 @interface BadgerLargerViewController : UIViewController<UIScrollViewDelegate, BadgerChooseDelegate> 
 {
+    BOOL _zoomed;
+    BOOL _didWin;
     PolygonView *_polygonView;
-    NSString *winLabelText;
-    GameEngine *gameEngine;
-    NSMutableArray *badgers;
-    Badger *currentBadger;
-    BOOL zoomed;
-    BOOL didWin;
-    UIView *winFailView;
-    UIView *gameOverView;
-    UILabel *winLabel;
-    UILabel *scoreLabel;
-    UILabel *finalScoreLabel;
-    UIScrollView *badgerScrollView;
-    UIImageView *badgerImageView;
-    UINavigationBar *navigationBar;
-    UIToolbar *toolBar;
     WinFailLabel *_winFailLabel;
+    NSMutableArray *_badgers;
+    Badger *_currentBadger;
+    UIScrollView *_badgerScrollView;
+    UIImageView *_badgerImageView;
+    UINavigationBar *_navigationBar;
+    UIToolbar *_toolBar;
     UIBarButtonItem *_largerButton;
 }
 
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *largerButton;
+@property (nonatomic, retain) PolygonView *polygonView;
 @property (nonatomic, retain) WinFailLabel *winFailLabel;
-@property (nonatomic, retain) NSString *winLabelText;
-@property (nonatomic, retain) IBOutlet UIView *winFailView;
 @property (nonatomic, retain) NSMutableArray *badgers;
 @property (nonatomic, retain) Badger *currentBadger;
-@property (nonatomic, retain) UIView *gameOverView;
-@property (nonatomic, retain) GameEngine *gameEngine;
-@property (nonatomic, retain) IBOutlet UILabel *winLabel;
-@property (nonatomic, retain) IBOutlet UILabel *finalScoreLabel;
-@property (nonatomic, retain) IBOutlet UILabel *scoreLabel;
 @property (nonatomic, retain) IBOutlet UIScrollView *badgerScrollView;
 @property (nonatomic, retain) IBOutlet UIImageView *badgerImageView;
 @property (nonatomic, retain) IBOutlet UINavigationBar *navigationBar;
 @property (nonatomic, retain) IBOutlet UIToolbar *toolBar;
-@property (nonatomic, retain) PolygonView *polygonView;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *largerButton;
 
 - (IBAction)showBadgerChooser:(id)sender;
-- (void)resetZoom;
-- (void)showWinFailScreen;
 - (IBAction)largerAction:(id)sender;
+- (void)resetZoom;
 
 @end

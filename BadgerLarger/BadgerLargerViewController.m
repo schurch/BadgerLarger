@@ -20,23 +20,16 @@
 @synthesize polygonView = _polygonView;
 @synthesize largerButton = _largerButton;
 @synthesize winFailLabel = _winFailLabel;
-@synthesize winLabelText;
-@synthesize currentBadger;
-@synthesize badgers;
-@synthesize winFailView;
-@synthesize gameOverView;
-@synthesize gameEngine;
-@synthesize winLabel;
-@synthesize scoreLabel;
-@synthesize finalScoreLabel;
-@synthesize badgerImageView;
-@synthesize badgerScrollView;
-@synthesize navigationBar;
-@synthesize toolBar;
+@synthesize currentBadger = _currentBadger;
+@synthesize badgers = _badgers;
+@synthesize badgerImageView = _badgerImageView;
+@synthesize badgerScrollView = _badgerScrollView;
+@synthesize navigationBar = _navigationBar;
+@synthesize toolBar = _toolBar;
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView 
 {
-    return badgerImageView;
+    return self.badgerImageView;
 }
 
 - (IBAction)showBadgerChooser:(id)sender 
@@ -61,10 +54,9 @@
 - (void)chooserViewController:(ChooserViewController *)chooserViewController
                     didChangeBadger:(Badger *)badger 
 {    
-    if(badger) 
-    {
+    if(badger) {
         self.currentBadger = badger; 
-        [badgerImageView setImage:[UIImage imageWithContentsOfFile:badger.badgerImagePath]];
+        [self.badgerImageView setImage:[UIImage imageWithContentsOfFile:badger.badgerImagePath]];
         [self resetZoom];
     }
     
@@ -77,47 +69,20 @@
         return;
     }
     
-    switch (gameEngine.gameStatus) {
-        case GameEngineFinished:
-            winLabelText = FAIL_TEXT;
-            [self showWinFailScreen];
-            break;
-        case GameEngineWonAndFinished:
-            scoreLabel.text = gameEngine.scoreText;
-            winLabelText = WIN_TEXT;
-            [self showWinFailScreen];
-            break;
-        case GameEngineWon:
-            scoreLabel.text = gameEngine.scoreText;
-            winLabelText = WIN_TEXT;
-            [self showWinFailScreen];
-            break;
-        case GameEngineLost:
-            winLabelText = FAIL_TEXT;
-            [self showWinFailScreen];
-            break;
-        default:
-            break;
-    }
-}
-
-- (void)showWinFailScreen
-{
-    self.winFailLabel.text = winLabelText;
+    self.winFailLabel.text = _didWin ? WIN_TEXT : FAIL_TEXT;
     self.winFailLabel.hidden = NO;
 }
 
 - (IBAction)largerAction:(id)sender 
-{
-    NSLog(@"largerAction called.");    
+{ 
     self.largerButton.enabled = NO;
     
-    CGRect zoomArea = [RectangleUtils randomZoomAreaInRect:badgerScrollView.frame maxZoom:badgerScrollView.maximumZoomScale];
+    CGRect zoomArea = [RectangleUtils randomZoomAreaInRect:self.badgerScrollView.frame maxZoom:self.badgerScrollView.maximumZoomScale];
 
     Polygon *zoomPolygon = [[Polygon alloc] initWithRect:zoomArea];
-    Polygon *badgerPolygon = [[Polygon alloc] initWithVertices:currentBadger.badgerOutlinePolygon];
+    Polygon *badgerPolygon = [[Polygon alloc] initWithVertices:self.currentBadger.badgerOutlinePolygon];
 
-    didWin = [zoomPolygon doesIntersect:badgerPolygon];
+    _didWin = [zoomPolygon doesIntersect:badgerPolygon];
     
 #ifdef DEBUG
     NSArray *polygons = [[NSArray alloc] initWithObjects:badgerPolygon, zoomPolygon, nil];
@@ -130,10 +95,9 @@
     [badgerPolygon release];
 
 #ifndef DEBUG
-    [badgerScrollView zoomToRect:zoomArea animated:YES];
+    [self.badgerScrollView zoomToRect:zoomArea animated:YES];
 #endif
     
-    [gameEngine didWin:didWin];
     [self performSelector:@selector(resetZoom) withObject:nil afterDelay:2];
 }
 
@@ -143,36 +107,49 @@
     [self.polygonView clearPolygons];
     self.winFailLabel.text = @"";
 #endif
-
-    self.winFailLabel.hidden = YES;
     
-    if (gameEngine.gameFinished) 
-    {
-        [gameEngine reset];
-        self.scoreLabel.text = gameEngine.scoreText;
+    self.winFailLabel.hidden = YES;    
+    self.largerButton.enabled = YES;
+
+    [self.badgerScrollView setZoomScale:1.0 animated:YES];
+}
+
+- (void)handleSingleTap:(UIGestureRecognizer *)sender {
+    CGPoint tapPoint = [sender locationInView:sender.view];
+    
+    int x = (int)tapPoint.x;
+    int y = (int)tapPoint.y - 46;
+    
+    static NSMutableString *_coordsString;
+    
+    if (!_coordsString) {
+        _coordsString = [[NSMutableString alloc] init];
+        [_coordsString appendFormat:@"(%i,%i)", x, y];
+    }else{
+        [_coordsString appendFormat:@",(%i,%i)", x, y];
     }
     
-    [badgerScrollView setZoomScale:1.0 animated:YES];
-    self.largerButton.enabled = YES;
+    NSLog(@"%@", _coordsString);
 }
 
 - (void)dealloc
 {
-    [badgerImageView release];
-    [badgerScrollView release];
-    [navigationBar release];
-    [toolBar release];
+    [_polygonView release];
     [_winFailLabel release];
+    [_badgers release];
+    [_currentBadger release];
+    [_badgerScrollView release];
+    [_badgerImageView release];
+    [_navigationBar release];
+    [_toolBar release];
     [_largerButton release];
+
     [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning
 {
-    // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
@@ -181,10 +158,9 @@
 {
     [super viewDidLoad];
     
-    gameEngine = [[GameEngine alloc] init];
+    self.navigationBar.tintColor = [UIColor navigationGreenColor];
+    self.toolBar.tintColor = [UIColor navigationGreenColor];
     
-    navigationBar.tintColor = [UIColor navigationGreenColor];
-    toolBar.tintColor = [UIColor navigationGreenColor];
     self.currentBadger = [self.badgers objectAtIndex:0];
     
     CGFloat labelHeight = 100;
@@ -205,6 +181,11 @@
     [winFailLabel release];
     
     
+//    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+//    tapRecognizer.numberOfTapsRequired = 1;
+//    [self.view addGestureRecognizer:tapRecognizer];
+//    [tapRecognizer release];
+    
 #ifdef DEBUG
     PolygonView *polygonView = [[PolygonView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
     [self.badgerImageView addSubview:polygonView];
@@ -216,8 +197,6 @@
 
 - (void)viewDidUnload
 {
-    [self setWinFailLabel:nil];
-    [self setLargerButton:nil];
     [super viewDidUnload];
 }
 

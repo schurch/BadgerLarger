@@ -19,7 +19,6 @@
 		FD7EC318141E3A550037AE05 /* Vertex.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7EC317141E3A550037AE05 /* Vertex.m */; };
 		FD9C9FFB141D05EE00B414AE /* Badger.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C9FFA141D05EE00B414AE /* Badger.m */; };
 		FD9CA007141D188100B414AE /* BadgerSettings.cfg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FD9C9FED141D01B200B414AE /* BadgerSettings.cfg */; };
-		FDAA391A141A762500C10B6B /* GameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAA3919141A762500C10B6B /* GameEngine.m */; };
 		FDBFBC5C141838A300815898 /* badger1_thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC4C141838A300815898 /* badger1_thumb.jpg */; };
 		FDBFBC5D141838A300815898 /* badger1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC4D141838A300815898 /* badger1.jpg */; };
 		FDBFBC5E141838A300815898 /* badger2_thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC4E141838A300815898 /* badger2_thumb.jpg */; };
@@ -146,8 +145,6 @@
 		FD9C9FED141D01B200B414AE /* BadgerSettings.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BadgerSettings.cfg; sourceTree = "<group>"; };
 		FD9C9FF9141D05EE00B414AE /* Badger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Badger.h; sourceTree = "<group>"; };
 		FD9C9FFA141D05EE00B414AE /* Badger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Badger.m; sourceTree = "<group>"; };
-		FDAA3918141A762500C10B6B /* GameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameEngine.h; sourceTree = "<group>"; };
-		FDAA3919141A762500C10B6B /* GameEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameEngine.m; sourceTree = "<group>"; };
 		FDBFBC4C141838A300815898 /* badger1_thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger1_thumb.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger1_thumb.jpg"; sourceTree = "<group>"; };
 		FDBFBC4D141838A300815898 /* badger1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger1.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger1.jpg"; sourceTree = "<group>"; };
 		FDBFBC4E141838A300815898 /* badger2_thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger2_thumb.jpg; path = "../../../../Desktop/Flikr Badgers/app_images/badger2_thumb.jpg"; sourceTree = "<group>"; };
@@ -264,8 +261,6 @@
 				FD0C207A141430A300F3A1BE /* ChooserButton.m */,
 				FDFE51E3141A1F350067DDB5 /* UIColor+CustomColors.h */,
 				FDFE51E4141A1F350067DDB5 /* UIColor+CustomColors.m */,
-				FDAA3918141A762500C10B6B /* GameEngine.h */,
-				FDAA3919141A762500C10B6B /* GameEngine.m */,
 				FD9C9FF9141D05EE00B414AE /* Badger.h */,
 				FD9C9FFA141D05EE00B414AE /* Badger.m */,
 				FD7EC316141E3A550037AE05 /* Vertex.h */,
@@ -499,7 +494,6 @@
 				FD360D231418DC530025EFC7 /* CreditsViewController.m in Sources */,
 				FDFE51E5141A1F350067DDB5 /* UIColor+CustomColors.m in Sources */,
 				FDFE51E9141A43E30067DDB5 /* RectangleUtils.m in Sources */,
-				FDAA391A141A762500C10B6B /* GameEngine.m in Sources */,
 				FD9C9FFB141D05EE00B414AE /* Badger.m in Sources */,
 				FD7EC318141E3A550037AE05 /* Vertex.m in Sources */,
 				FD504380141E5BDC007955EE /* gpc.c in Sources */,

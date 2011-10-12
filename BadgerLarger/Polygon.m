@@ -12,37 +12,6 @@
 
 @implementation Polygon
 
-+ (gpc_polygon *)generateGpcPoly:(NSArray *)vertices
-{    
-    int vertexCount = (int)[vertices count];
-
-    gpc_vertex *vertexList = malloc(sizeof(gpc_vertex) * vertexCount);
-    
-    for (int i = 0; i < vertexCount; i++) 
-    {
-        Vertex *vertex = [vertices objectAtIndex:i];
-        
-        gpc_vertex gpcVertex;
-        gpcVertex.x = vertex.x;
-        gpcVertex.y = vertex.y;
-        
-        vertexList[i] = gpcVertex;
-    }
-    
-    gpc_vertex_list *currentPolyVertexList = malloc(sizeof(gpc_vertex_list));
-    currentPolyVertexList -> num_vertices = vertexCount;
-    currentPolyVertexList -> vertex = vertexList;
-
-    
-    gpc_polygon *gpcPolygon = malloc(sizeof(gpc_polygon));
-    
-    gpcPolygon -> hole = NULL;
-    gpcPolygon -> num_contours = 1;
-    gpcPolygon -> contour = currentPolyVertexList;
-    
-    return gpcPolygon;
-}
-
 @synthesize vertices = _vertices;
 
 - (id)initWithRect:(CGRect)zoomArea
@@ -92,11 +61,11 @@
     
     if (intersectPolygon -> num_contours == 0) 
     {
-        returnValue = FALSE;   
+        returnValue = NO;   
     }
     else
     {
-        returnValue = TRUE;
+        returnValue = YES;
     }
     
     gpc_free_polygon(currentPolygon);
@@ -113,7 +82,40 @@
 - (void)dealloc
 {
     [_vertices release];
+    
     [super dealloc];
+}
+
+
++ (gpc_polygon *)generateGpcPoly:(NSArray *)vertices
+{    
+    int vertexCount = (int)[vertices count];
+    
+    gpc_vertex *vertexList = malloc(sizeof(gpc_vertex) * vertexCount);
+    
+    for (int i = 0; i < vertexCount; i++) 
+    {
+        Vertex *vertex = [vertices objectAtIndex:i];
+        
+        gpc_vertex gpcVertex;
+        gpcVertex.x = vertex.x;
+        gpcVertex.y = vertex.y;
+        
+        vertexList[i] = gpcVertex;
+    }
+    
+    gpc_vertex_list *currentPolyVertexList = malloc(sizeof(gpc_vertex_list));
+    currentPolyVertexList -> num_vertices = vertexCount;
+    currentPolyVertexList -> vertex = vertexList;
+    
+    
+    gpc_polygon *gpcPolygon = malloc(sizeof(gpc_polygon));
+    
+    gpcPolygon -> hole = NULL;
+    gpcPolygon -> num_contours = 1;
+    gpcPolygon -> contour = currentPolyVertexList;
+    
+    return gpcPolygon;
 }
 
 @end

@@ -3,7 +3,7 @@
 //  BadgerLarger
 //
 //  Created by Stefan Church on 12/09/2011.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Stefan Church. All rights reserved.
 //
 
 #import "Vertex.h"
@@ -11,16 +11,16 @@
 
 @implementation Vertex
 
-@synthesize x;
-@synthesize y;
+@synthesize x = _x;
+@synthesize y = _y;
 
-- (id)initWithX:(float)theX y:(float)theY 
+- (id)initWithX:(float)x y:(float)y 
 {
     self = [super init];
     if (self) 
     {
-        self.x = theX;
-        self.y = theY;
+        self.x = x;
+        self.y = y;
     }
     
     return self;

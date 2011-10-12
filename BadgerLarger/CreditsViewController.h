@@ -3,7 +3,7 @@
 //  BadgerLarger
 //
 //  Created by Stefan Church on 08/09/2011.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Stefan Church. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -11,7 +11,7 @@
 
 @interface CreditsViewController : UIViewController {
     id delegate;
-    IBOutlet UINavigationBar *navigationBar;
+    UINavigationBar *_navigationBar;
 }
 
 @property (nonatomic, retain) IBOutlet UINavigationBar *navigationBar;

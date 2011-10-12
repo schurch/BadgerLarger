@@ -14,6 +14,49 @@ const int POINT_ARRAY_SIZE = 10;
 
 @implementation Badger
 
+- (id)initWithPolygon:(NSMutableArray *)polygon badgerImagePath:(NSString *)imagePath badgerThumbPath:(NSString *)thumbPath
+{
+    self = [super init];
+    
+    if (self) {
+        [polygon retain];
+        _badgerOutlinePolygon = polygon;
+        
+        [imagePath retain];
+        _badgerImagePath = imagePath;
+        
+        [thumbPath retain];
+        _badgerThumbImagePath = thumbPath;
+    }
+    
+    return self;
+}
+
+- (NSArray *)badgerOutlinePolygon
+{
+    return _badgerOutlinePolygon;
+}
+
+- (NSString *)badgerImagePath
+{
+    return _badgerImagePath;    
+}
+
+- (NSString *)badgetThumbPath
+{
+    return _badgerThumbImagePath;
+}
+
+- (void)dealloc
+{
+    [_badgerOutlinePolygon release];
+    [_badgerImagePath release];
+    [_badgerThumbImagePath release];
+    
+    [super dealloc];
+}
+
+
 + (NSMutableArray *)generateBadgerList:(NSString *)pathToConfigFile
 {
     NSError *error = nil;
@@ -22,33 +65,28 @@ const int POINT_ARRAY_SIZE = 10;
     
     NSString *fileContents = [NSString stringWithContentsOfFile:file encoding:NSUTF8StringEncoding error:&error];
     
-    if(error)
-    {
+    if(error) {
         NSLog(@"ERROR loading config file: %@", [error description]);
     }
     
     NSMutableArray *badgers = [[NSMutableArray alloc] init];
     
-    for (NSString *line in [fileContents componentsSeparatedByString:@"\n"]) 
-    {
-        if (!line || [line length] == 0) 
-        {
+    for (NSString *line in [fileContents componentsSeparatedByString:@"\n"]) {
+        if (!line || [line length] == 0) {
             continue;
         }
         
         NSString *trimmedString = [line stringByTrimmingCharactersInSet:
                                    [NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
-        if([trimmedString hasPrefix:@"#"])
-        {
+        if([trimmedString hasPrefix:@"#"]) {
             continue;
         }
         
-        if([trimmedString length] == 0)
-        {
+        if([trimmedString length] == 0) {
             continue;
         }
-
+        
         NSArray *lineComponents = [trimmedString componentsSeparatedByString:@":"];
         
         NSString *imageName = [lineComponents objectAtIndex:0];
@@ -82,8 +120,7 @@ const int POINT_ARRAY_SIZE = 10;
     char *currentXPointer = currentX;
     char *currentYPointer = currentY;
     
-    for (int i = 0; i < [verticesString length]; i++) 
-    {
+    for (int i = 0; i < [verticesString length]; i++) {
         char character = (char)[verticesString characterAtIndex:i];
         
         switch (character) {
@@ -95,11 +132,11 @@ const int POINT_ARRAY_SIZE = 10;
                 
                 float x = atof(currentXPointer);
                 float y = atof(currentYPointer);
-            
+                
                 Vertex *currentPoint = [[Vertex alloc] initWithX:x y:y];              
                 [vertices addObject:currentPoint];
                 [currentPoint release];
-
+                
                 currentX = currentXPointer;
                 currentY = currentYPointer;
                 
@@ -111,13 +148,11 @@ const int POINT_ARRAY_SIZE = 10;
                 readingX = !readingX;
                 break;
             default:
-                if (readingX) 
-                {
+                if (readingX) {
                     *currentX = character;
                     currentX++;
                 }
-                else
-                {
+                else {
                     *currentY = character;
                     currentY++;
                 }
@@ -129,48 +164,6 @@ const int POINT_ARRAY_SIZE = 10;
     free(currentY);
     
     return [vertices autorelease];
-}
-
-- (id)initWithPolygon:(NSMutableArray *)polygon badgerImagePath:(NSString *)imagePath badgerThumbPath:(NSString *)thumbPath
-{
-    self = [super init];
-    
-    if (self) 
-    {
-        [polygon retain];
-        badgerOutlinePolygon = polygon;
-        
-        [imagePath retain];
-        badgerImagePath = imagePath;
-        
-        [thumbPath retain];
-        badgerThumbImagePath = thumbPath;
-    }
-    
-    return self;
-}
-
-- (NSArray *)badgerOutlinePolygon
-{
-    return badgerOutlinePolygon;
-}
-
-- (NSString *)badgerImagePath
-{
-    return badgerImagePath;    
-}
-
-- (NSString *)badgetThumbPath
-{
-    return badgerThumbImagePath;
-}
-
-- (void)dealloc
-{
-    [badgerOutlinePolygon release];
-    [badgerImagePath release];
-    [badgerThumbImagePath release];
-    [super dealloc];
 }
 
 @end

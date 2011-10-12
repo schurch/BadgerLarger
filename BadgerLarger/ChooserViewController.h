@@ -12,17 +12,16 @@
 
 @interface ChooserViewController : UIViewController <CreditsDoneDelegate>  {
     id delegate;
-    NSMutableArray *badgers;
-    IBOutlet UIScrollView *scrollView;
+    NSMutableArray *_badgers;
+    UIScrollView *_scrollView;
 }
 
 @property (nonatomic, retain) NSMutableArray *badgers;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
+- (IBAction)showCredits:(id)sender;
 - (id)delegate;
 - (void)setDelegate:(id)newDelegate;
-
-- (IBAction)showCredits:(id)sender;
 - (void)close:(id)sender;
 - (int)layoutBadgerButtons:(NSArray *)badgerButtons;
 
