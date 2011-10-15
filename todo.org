@@ -26,7 +26,8 @@
 ** TODO Screenshots for App Store
 ** TODO Icons for App Store
 ** TODO Text for App Store
-** TODO Put on GitHub
+** DONE Put on GitHub
+   CLOSED: [2011-10-12 Wed 05:47]
 ** DONE Proper game over logic (show WIN/FAIL, then game over screen)
    CLOSED: [2011-09-11 Sun 15:41]
 ** DONE Load badger images and coords from config file

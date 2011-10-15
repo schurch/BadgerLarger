@@ -29,12 +29,15 @@
 		FD17869714454DC700BE3478 /* badger8_thumb.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FD17867614454D9600BE3478 /* badger8_thumb.jpg */; };
 		FD17869814454DC700BE3478 /* badger8.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = FD17867714454D9600BE3478 /* badger8.jpg */; };
 		FD2439AF1439142700F89A69 /* PolygonView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2439AE1439142700F89A69 /* PolygonView.m */; };
+		FD2C93111449159000B5F837 /* badger_icon_114.png in Resources */ = {isa = PBXBuildFile; fileRef = FD2C93101449159000B5F837 /* badger_icon_114.png */; };
 		FD360D231418DC530025EFC7 /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD360D211418DC530025EFC7 /* CreditsViewController.m */; };
 		FD360D241418DC530025EFC7 /* CreditsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD360D221418DC530025EFC7 /* CreditsView.xib */; };
 		FD504380141E5BDC007955EE /* gpc.c in Sources */ = {isa = PBXBuildFile; fileRef = FD50437E141E5BDC007955EE /* gpc.c */; };
 		FD7E966614423A2A00B30748 /* WinFailLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7E966514423A2A00B30748 /* WinFailLabel.m */; };
 		FD7EC318141E3A550037AE05 /* Vertex.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7EC317141E3A550037AE05 /* Vertex.m */; };
 		FD9C9FFB141D05EE00B414AE /* Badger.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C9FFA141D05EE00B414AE /* Badger.m */; };
+		FDB1D1B614491E790022FD89 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FDB1D1B514491E790022FD89 /* Default.png */; };
+		FDB1D1B814491E8A0022FD89 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDB1D1B714491E8A0022FD89 /* Default@2x.png */; };
 		FDBFBC7D14183D9600815898 /* magnifying-glass-zoom.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC7C14183D9600815898 /* magnifying-glass-zoom.png */; };
 		FDE706431413BEF60032ACD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706421413BEF60032ACD0 /* UIKit.framework */; };
 		FDE706451413BEF60032ACD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706441413BEF60032ACD0 /* Foundation.framework */; };
@@ -132,6 +135,7 @@
 		FD17867714454D9600BE3478 /* badger8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badger8.jpg; path = Badgers/badger8.jpg; sourceTree = SOURCE_ROOT; };
 		FD2439AD1439142700F89A69 /* PolygonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolygonView.h; sourceTree = "<group>"; };
 		FD2439AE1439142700F89A69 /* PolygonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolygonView.m; sourceTree = "<group>"; };
+		FD2C93101449159000B5F837 /* badger_icon_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = badger_icon_114.png; path = ../badger_icon_114.png; sourceTree = "<group>"; };
 		FD360D201418DC530025EFC7 /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
 		FD360D211418DC530025EFC7 /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
 		FD360D221418DC530025EFC7 /* CreditsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditsView.xib; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 		FD7EC317141E3A550037AE05 /* Vertex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vertex.m; sourceTree = "<group>"; };
 		FD9C9FF9141D05EE00B414AE /* Badger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Badger.h; sourceTree = "<group>"; };
 		FD9C9FFA141D05EE00B414AE /* Badger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Badger.m; sourceTree = "<group>"; };
+		FDB1D1B514491E790022FD89 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		FDB1D1B714491E8A0022FD89 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		FDBFBC7C14183D9600815898 /* magnifying-glass-zoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "magnifying-glass-zoom.png"; path = "../../../../Desktop/magnifying-glass-zoom.png"; sourceTree = "<group>"; };
 		FDE7063E1413BEF60032ACD0 /* BadgerLarger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadgerLarger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE706421413BEF60032ACD0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -302,6 +308,9 @@
 		FDE706491413BEF60032ACD0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FDB1D1B714491E8A0022FD89 /* Default@2x.png */,
+				FDB1D1B514491E790022FD89 /* Default.png */,
+				FD2C93101449159000B5F837 /* badger_icon_114.png */,
 				FD17866614454D4C00BE3478 /* BadgerSettings.cfg */,
 				FD17866414454B6600BE3478 /* badger_icon.png */,
 				FDBFBC7C14183D9600815898 /* magnifying-glass-zoom.png */,
@@ -411,6 +420,9 @@
 				FDE706861413C1170032ACD0 /* ChooserView.xib in Resources */,
 				FD360D241418DC530025EFC7 /* CreditsView.xib in Resources */,
 				FD17866514454B6700BE3478 /* badger_icon.png in Resources */,
+				FD2C93111449159000B5F837 /* badger_icon_114.png in Resources */,
+				FDB1D1B614491E790022FD89 /* Default.png in Resources */,
+				FDB1D1B814491E8A0022FD89 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +529,59 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FD1DAF921446A09A00B98CDE /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Distribution;
+		};
+		FD1DAF931446A09A00B98CDE /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Stefan Church";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BadgerLarger/BadgerLarger-Prefix.pch";
+				INFOPLIST_FILE = "BadgerLarger/BadgerLarger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "AAFE803D-EC87-4BCE-8C8E-18A9E4641ABC";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Distribution;
+		};
+		FD1DAF941446A09A00B98CDE /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BadgerLarger.app/BadgerLarger";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BadgerLargerTests/BadgerLargerTests-Prefix.pch";
+				INFOPLIST_FILE = "BadgerLargerTests/BadgerLargerTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Distribution;
+		};
 		FDE706731413BEF60032ACD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -629,6 +694,7 @@
 			buildConfigurations = (
 				FDE706731413BEF60032ACD0 /* Debug */,
 				FDE706741413BEF60032ACD0 /* Release */,
+				FD1DAF921446A09A00B98CDE /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -638,6 +704,7 @@
 			buildConfigurations = (
 				FDE706761413BEF60032ACD0 /* Debug */,
 				FDE706771413BEF60032ACD0 /* Release */,
+				FD1DAF931446A09A00B98CDE /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -647,6 +714,7 @@
 			buildConfigurations = (
 				FDE706791413BEF60032ACD0 /* Debug */,
 				FDE7067A1413BEF60032ACD0 /* Release */,
+				FD1DAF941446A09A00B98CDE /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -15,9 +15,10 @@
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>badger_icon.png</string>
+		<string>badger_icon_114.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>stefan.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.stefanchurch.badgerlarger</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
