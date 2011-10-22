@@ -162,6 +162,7 @@
     self.toolBar.tintColor = [UIColor navigationGreenColor];
     
     self.currentBadger = [self.badgers objectAtIndex:0];
+    [self.badgerImageView setImage:[UIImage imageWithContentsOfFile:self.currentBadger.badgerImagePath]];
     
     CGFloat labelHeight = 100;
     CGFloat labelWidth = 250;

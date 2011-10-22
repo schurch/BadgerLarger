@@ -39,6 +39,7 @@
 		FDB1D1B814491E8A0022FD89 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDB1D1B714491E8A0022FD89 /* Default@2x.png */; };
 		FDDCA8DC14524B5800F1F6DE /* gpc.c in Sources */ = {isa = PBXBuildFile; fileRef = FDDCA8DA14524B5800F1F6DE /* gpc.c */; };
 		FDDCA8DE14524BEF00F1F6DE /* magnifying-glass-zoom.png in Resources */ = {isa = PBXBuildFile; fileRef = FDDCA8DD14524BEF00F1F6DE /* magnifying-glass-zoom.png */; };
+		FDDCA8EC145251E100F1F6DE /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDDCA8EB145251E100F1F6DE /* Entitlements.plist */; };
 		FDE706431413BEF60032ACD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706421413BEF60032ACD0 /* UIKit.framework */; };
 		FDE706451413BEF60032ACD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706441413BEF60032ACD0 /* Foundation.framework */; };
 		FDE706471413BEF60032ACD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706461413BEF60032ACD0 /* CoreGraphics.framework */; };
@@ -150,6 +151,7 @@
 		FDDCA8DA14524B5800F1F6DE /* gpc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gpc.c; sourceTree = "<group>"; };
 		FDDCA8DB14524B5800F1F6DE /* gpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gpc.h; sourceTree = "<group>"; };
 		FDDCA8DD14524BEF00F1F6DE /* magnifying-glass-zoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "magnifying-glass-zoom.png"; sourceTree = SOURCE_ROOT; };
+		FDDCA8EB145251E100F1F6DE /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Entitlements.plist; path = ../Entitlements.plist; sourceTree = "<group>"; };
 		FDE7063E1413BEF60032ACD0 /* BadgerLarger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadgerLarger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE706421413BEF60032ACD0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FDE706441413BEF60032ACD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -308,6 +310,7 @@
 		FDE706491413BEF60032ACD0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FDDCA8EB145251E100F1F6DE /* Entitlements.plist */,
 				FDDCA8DD14524BEF00F1F6DE /* magnifying-glass-zoom.png */,
 				FDB1D1B714491E8A0022FD89 /* Default@2x.png */,
 				FDB1D1B514491E790022FD89 /* Default.png */,
@@ -423,6 +426,7 @@
 				FDB1D1B614491E790022FD89 /* Default.png in Resources */,
 				FDB1D1B814491E8A0022FD89 /* Default@2x.png in Resources */,
 				FDDCA8DE14524BEF00F1F6DE /* magnifying-glass-zoom.png in Resources */,
+				FDDCA8EC145251E100F1F6DE /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,13 +537,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Stefan Church";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AAFE803D-EC87-4BCE-8C8E-18A9E4641ABC";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;
@@ -548,13 +553,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Stefan Church";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Stefan Church";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BadgerLarger/BadgerLarger-Prefix.pch";
 				INFOPLIST_FILE = "BadgerLarger/BadgerLarger-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "AAFE803D-EC87-4BCE-8C8E-18A9E4641ABC";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AAFE803D-EC87-4BCE-8C8E-18A9E4641ABC";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -582,6 +588,60 @@
 			};
 			name = Distribution;
 		};
+		FDDCA8E71452508800F1F6DE /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = Entitlements.plist;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Stefan Church";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "919048CF-80B8-4C17-943B-534D21524D9E";
+				SDKROOT = iphoneos;
+			};
+			name = "Ad Hoc";
+		};
+		FDDCA8E81452508800F1F6DE /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BadgerLarger/BadgerLarger-Prefix.pch";
+				INFOPLIST_FILE = "BadgerLarger/BadgerLarger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Ad Hoc";
+		};
+		FDDCA8E91452508800F1F6DE /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BadgerLarger.app/BadgerLarger";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BadgerLargerTests/BadgerLargerTests-Prefix.pch";
+				INFOPLIST_FILE = "BadgerLargerTests/BadgerLargerTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = "Ad Hoc";
+		};
 		FDE706731413BEF60032ACD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -595,6 +655,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -610,6 +671,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -618,12 +680,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BadgerLarger/BadgerLarger-Prefix.pch";
 				INFOPLIST_FILE = "BadgerLarger/BadgerLarger-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -632,11 +696,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BadgerLarger/BadgerLarger-Prefix.pch";
 				INFOPLIST_FILE = "BadgerLarger/BadgerLarger-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -694,6 +760,7 @@
 			buildConfigurations = (
 				FDE706731413BEF60032ACD0 /* Debug */,
 				FDE706741413BEF60032ACD0 /* Release */,
+				FDDCA8E71452508800F1F6DE /* Ad Hoc */,
 				FD1DAF921446A09A00B98CDE /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -704,6 +771,7 @@
 			buildConfigurations = (
 				FDE706761413BEF60032ACD0 /* Debug */,
 				FDE706771413BEF60032ACD0 /* Release */,
+				FDDCA8E81452508800F1F6DE /* Ad Hoc */,
 				FD1DAF931446A09A00B98CDE /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -714,6 +782,7 @@
 			buildConfigurations = (
 				FDE706791413BEF60032ACD0 /* Debug */,
 				FDE7067A1413BEF60032ACD0 /* Release */,
+				FDDCA8E91452508800F1F6DE /* Ad Hoc */,
 				FD1DAF941446A09A00B98CDE /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;

@@ -80,7 +80,7 @@
       buildConfiguration = "Release">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Distribution"
+      buildConfiguration = "Ad Hoc"
       customArchiveName = "BadgerLarger"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
