@@ -32,13 +32,13 @@
 		FD2C93111449159000B5F837 /* badger_icon_114.png in Resources */ = {isa = PBXBuildFile; fileRef = FD2C93101449159000B5F837 /* badger_icon_114.png */; };
 		FD360D231418DC530025EFC7 /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD360D211418DC530025EFC7 /* CreditsViewController.m */; };
 		FD360D241418DC530025EFC7 /* CreditsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD360D221418DC530025EFC7 /* CreditsView.xib */; };
-		FD504380141E5BDC007955EE /* gpc.c in Sources */ = {isa = PBXBuildFile; fileRef = FD50437E141E5BDC007955EE /* gpc.c */; };
 		FD7E966614423A2A00B30748 /* WinFailLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7E966514423A2A00B30748 /* WinFailLabel.m */; };
 		FD7EC318141E3A550037AE05 /* Vertex.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7EC317141E3A550037AE05 /* Vertex.m */; };
 		FD9C9FFB141D05EE00B414AE /* Badger.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C9FFA141D05EE00B414AE /* Badger.m */; };
 		FDB1D1B614491E790022FD89 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FDB1D1B514491E790022FD89 /* Default.png */; };
 		FDB1D1B814491E8A0022FD89 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDB1D1B714491E8A0022FD89 /* Default@2x.png */; };
-		FDBFBC7D14183D9600815898 /* magnifying-glass-zoom.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBFBC7C14183D9600815898 /* magnifying-glass-zoom.png */; };
+		FDDCA8DC14524B5800F1F6DE /* gpc.c in Sources */ = {isa = PBXBuildFile; fileRef = FDDCA8DA14524B5800F1F6DE /* gpc.c */; };
+		FDDCA8DE14524BEF00F1F6DE /* magnifying-glass-zoom.png in Resources */ = {isa = PBXBuildFile; fileRef = FDDCA8DD14524BEF00F1F6DE /* magnifying-glass-zoom.png */; };
 		FDE706431413BEF60032ACD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706421413BEF60032ACD0 /* UIKit.framework */; };
 		FDE706451413BEF60032ACD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706441413BEF60032ACD0 /* Foundation.framework */; };
 		FDE706471413BEF60032ACD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE706461413BEF60032ACD0 /* CoreGraphics.framework */; };
@@ -139,8 +139,6 @@
 		FD360D201418DC530025EFC7 /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
 		FD360D211418DC530025EFC7 /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
 		FD360D221418DC530025EFC7 /* CreditsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditsView.xib; sourceTree = "<group>"; };
-		FD50437E141E5BDC007955EE /* gpc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = gpc.c; path = "../../../../Downloads/gpc232-release/gpc.c"; sourceTree = "<group>"; };
-		FD50437F141E5BDC007955EE /* gpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gpc.h; path = "../../../../Downloads/gpc232-release/gpc.h"; sourceTree = "<group>"; };
 		FD7E966414423A2A00B30748 /* WinFailLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinFailLabel.h; sourceTree = "<group>"; };
 		FD7E966514423A2A00B30748 /* WinFailLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinFailLabel.m; sourceTree = "<group>"; };
 		FD7EC316141E3A550037AE05 /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
@@ -149,7 +147,9 @@
 		FD9C9FFA141D05EE00B414AE /* Badger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Badger.m; sourceTree = "<group>"; };
 		FDB1D1B514491E790022FD89 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		FDB1D1B714491E8A0022FD89 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
-		FDBFBC7C14183D9600815898 /* magnifying-glass-zoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "magnifying-glass-zoom.png"; path = "../../../../Desktop/magnifying-glass-zoom.png"; sourceTree = "<group>"; };
+		FDDCA8DA14524B5800F1F6DE /* gpc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gpc.c; sourceTree = "<group>"; };
+		FDDCA8DB14524B5800F1F6DE /* gpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gpc.h; sourceTree = "<group>"; };
+		FDDCA8DD14524BEF00F1F6DE /* magnifying-glass-zoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "magnifying-glass-zoom.png"; sourceTree = SOURCE_ROOT; };
 		FDE7063E1413BEF60032ACD0 /* BadgerLarger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadgerLarger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE706421413BEF60032ACD0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FDE706441413BEF60032ACD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -231,8 +231,8 @@
 		FDB6F8CD1417844C00F67A1F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FD50437F141E5BDC007955EE /* gpc.h */,
-				FD50437E141E5BDC007955EE /* gpc.c */,
+				FDDCA8DA14524B5800F1F6DE /* gpc.c */,
+				FDDCA8DB14524B5800F1F6DE /* gpc.h */,
 				FDFE51E7141A43E20067DDB5 /* RectangleUtils.h */,
 				FDFE51E8141A43E30067DDB5 /* RectangleUtils.m */,
 				FDE706511413BEF60032ACD0 /* BadgerLargerAppDelegate.h */,
@@ -308,12 +308,12 @@
 		FDE706491413BEF60032ACD0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FDDCA8DD14524BEF00F1F6DE /* magnifying-glass-zoom.png */,
 				FDB1D1B714491E8A0022FD89 /* Default@2x.png */,
 				FDB1D1B514491E790022FD89 /* Default.png */,
 				FD2C93101449159000B5F837 /* badger_icon_114.png */,
 				FD17866614454D4C00BE3478 /* BadgerSettings.cfg */,
 				FD17866414454B6600BE3478 /* badger_icon.png */,
-				FDBFBC7C14183D9600815898 /* magnifying-glass-zoom.png */,
 				FD0C207E1414392300F3A1BE /* icon_settings 20.png */,
 				FDE7064A1413BEF60032ACD0 /* BadgerLarger-Info.plist */,
 				FDE7064B1413BEF60032ACD0 /* InfoPlist.strings */,
@@ -414,7 +414,6 @@
 			files = (
 				FDE7064D1413BEF60032ACD0 /* InfoPlist.strings in Resources */,
 				FD0C207F1414392300F3A1BE /* icon_settings 20.png in Resources */,
-				FDBFBC7D14183D9600815898 /* magnifying-glass-zoom.png in Resources */,
 				FDE706561413BEF60032ACD0 /* MainWindow.xib in Resources */,
 				FDE7065C1413BEF60032ACD0 /* BadgerLargerView.xib in Resources */,
 				FDE706861413C1170032ACD0 /* ChooserView.xib in Resources */,
@@ -423,6 +422,7 @@
 				FD2C93111449159000B5F837 /* badger_icon_114.png in Resources */,
 				FDB1D1B614491E790022FD89 /* Default.png in Resources */,
 				FDB1D1B814491E8A0022FD89 /* Default@2x.png in Resources */,
+				FDDCA8DE14524BEF00F1F6DE /* magnifying-glass-zoom.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,10 +468,10 @@
 				FDFE51E9141A43E30067DDB5 /* RectangleUtils.m in Sources */,
 				FD9C9FFB141D05EE00B414AE /* Badger.m in Sources */,
 				FD7EC318141E3A550037AE05 /* Vertex.m in Sources */,
-				FD504380141E5BDC007955EE /* gpc.c in Sources */,
 				FD0F72A7141F79B3003FC650 /* Polygon.m in Sources */,
 				FD2439AF1439142700F89A69 /* PolygonView.m in Sources */,
 				FD7E966614423A2A00B30748 /* WinFailLabel.m in Sources */,
+				FDDCA8DC14524B5800F1F6DE /* gpc.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
